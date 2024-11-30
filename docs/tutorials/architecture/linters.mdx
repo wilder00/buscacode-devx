@@ -1,0 +1,51 @@
+---
+sidebar_position: 2
+---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Linters and formatters
+
+
+## ESlint
+
+Let's add Eslint in our project.
+
+### VScode plugin
+
+We should install the official microsoft plugin of eslint in [this page](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint).
+the current version (30/11/2024) is:
+
+```yaml
+Name: ESLint
+Id: dbaeumer.vscode-eslint
+Description: Integrates ESLint JavaScript into VS Code.
+Version: 3.0.10
+Publisher: Microsoft
+VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
+```
+
+### ESlint node package
+
+<Tabs>
+  <TabItem value="pnpm" label="pnpm" default>
+    ```shell
+    pnpm create @eslint/config@latest
+    ```
+  </TabItem>
+  <TabItem value="yarn" label="yarn">
+    ```shell
+    yarn create @eslint/config
+    ```
+  </TabItem>
+  <TabItem value="npm" label="npm">
+    ```bash
+    npm init @eslint/config@latest
+    ```
+  </TabItem>
+</Tabs>
+
+More about [Eslint](https://eslint.org/docs/latest/use/getting-started).
+
+
+
