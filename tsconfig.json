@@ -4,5 +4,7 @@
   "compilerOptions": {
     "baseUrl": "."
   },
-  "exclude": [".docusaurus", "build"]
+  "types": ["vitest/globals"],
+  "exclude": [".docusaurus", "build"],
+  "include": ["./**/*.spec.ts"],
 }

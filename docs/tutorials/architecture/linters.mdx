@@ -47,5 +47,16 @@ VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=dbaeume
 
 More about [Eslint](https://eslint.org/docs/latest/use/getting-started).
 
+To solve some issues with the eslint version as a dependency of some packages, we should
+overwrite the dependency.
+
+```json title="package.json" 
+{
+  //highlight-next-line
+  "overrides": {"eslint": "^9.6.0"},
+}
+```
 
 
+
+reference: [Alex Rusin](https://www.youtube.com/watch?v=GTDYsV5pyZU)
