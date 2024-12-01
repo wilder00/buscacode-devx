@@ -62,6 +62,6 @@ export default [
     }
   },
   {
-    ignores: ['node_modules', 'dist', '.docusaurus']
+    ignores: ['**/node_modules', '**/dist', '.docusaurus']
   }
 ]

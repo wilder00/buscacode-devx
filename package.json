@@ -24,7 +24,9 @@
     "coverage:show": "http-server -c-1 -o ./coverage/index.html -p 6001",
     "coverage:show-lcov": "http-server -c-1 -o ./coverage/lcov-report/index.html -p 6001",
     "coverage:verify-lcov": "lcov-total ./coverage/lcov.info && lcov-total ./coverage/lcov.info --gte=50",
-    "prepare": "husky"
+    "prepare": "husky",
+    "build:packages": "lerna run build",
+    "publish:packages": "lerna run build && pnpm run test && lerna publish"
   },
   "dependencies": {
     "@docusaurus/core": "3.6.3",
