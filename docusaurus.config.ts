@@ -1,9 +1,9 @@
 import type * as Preset from '@docusaurus/preset-classic'
 import type { Config } from '@docusaurus/types'
-import { themes as prismThemes } from 'prism-react-renderer'
 import rehypeKatex from 'rehype-katex'
 import remarkMath from 'remark-math'
 
+import { themes as prismTheme } from 'prism-react-renderer'
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 /** @type {import('@docusaurus/types').Config} */
@@ -34,10 +34,20 @@ const config: Config = {
     defaultLocale: 'en',
     locales: ['en']
   },
-  themes: ['@docusaurus/theme-mermaid', '@docusaurus/theme-classic'],
+  themes: ['@docusaurus/theme-mermaid', '@docusaurus/theme-live-codeblock'],
   markdown: {
     mermaid: true
   },
+  plugins: [
+    [
+      '@docusaurus/plugin-svgr',
+      {
+        svgrConfig: {
+          /* SVGR config */
+        }
+      }
+    ]
+  ],
   presets: [
     [
       'classic',
@@ -161,10 +171,10 @@ const config: Config = {
       copyright: `Copyright © ${new Date().getFullYear()} BuscacodeDevx.`
     },
     prism: {
-      theme: prismThemes.github,
-      darkTheme: prismThemes.dracula
-    }
-  } satisfies Preset.ThemeConfig
+      theme: prismTheme.github,
+      darkTheme: prismTheme.dracula
+    } satisfies Preset.ThemeConfig
+  }
 }
 
 export default config

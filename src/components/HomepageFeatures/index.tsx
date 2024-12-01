@@ -3,12 +3,11 @@ import undrawDocusaurusReact from '@site/static/img/undraw_docusaurus_react.svg'
 import undrawDocusaurusTree from '@site/static/img/undraw_docusaurus_tree.svg'
 import Heading from '@theme/Heading'
 import clsx from 'clsx'
-import React from 'react'
 import styles from './styles.module.css'
 
 type FeatureItem = {
   title: string
-  Svg: React.ComponentType<React.ComponentProps<'svg'>>
+  Svg: React.ComponentType<React.SVGProps<SVGSVGElement>>
   description: JSX.Element
 }
 

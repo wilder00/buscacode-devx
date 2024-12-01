@@ -2,9 +2,30 @@
   // This file is not used in compilation. It is here just for a nice editor experience.
   "extends": "@docusaurus/tsconfig",
   "compilerOptions": {
-    "baseUrl": "."
+    "jsx": "react-jsx", // Override the conflicting setting
+    "baseUrl": ".",
+    // "strict": true,
+    "allowUmdGlobalAccess": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    //-------------
+    "target": "es5",
+    "module": "esnext",
+    "lib": ["dom", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "paths": {
+      "react": ["./node_modules/@types/react"]
+    }
   },
   "types": ["vitest/globals", "react", "react-dom"],
   "exclude": [".docusaurus", "build"],
-  "include": ["./**/*.spec.ts", "src/**/*.{ts,tsx}"]
+  "include": ["./**/*.ts", "./**/*.tsx", "./**/*.spec.ts"]
 }
