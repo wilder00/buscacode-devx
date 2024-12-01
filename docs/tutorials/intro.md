@@ -5,4 +5,4 @@ displayed_sidebar: tutorialSidebar
 
 # Utils information
 
-There is a group of useful tutorials 
+There is a group of useful tutorials
