@@ -23,7 +23,8 @@
     "coverage": "vitest run --coverage",
     "coverage:show": "http-server -c-1 -o ./coverage/index.html -p 6001",
     "coverage:show-lcov": "http-server -c-1 -o ./coverage/lcov-report/index.html -p 6001",
-    "coverage:verify-lcov": "lcov-total ./coverage/lcov.info && lcov-total ./coverage/lcov.info --gte=50"
+    "coverage:verify-lcov": "lcov-total ./coverage/lcov.info && lcov-total ./coverage/lcov.info --gte=50",
+    "prepare": "husky"
   },
   "dependencies": {
     "@docusaurus/core": "3.6.3",
@@ -34,8 +35,8 @@
     "@docusaurus/theme-mermaid": "3.6.3",
     "@mdx-js/react": "3.1.0",
     "@types/node": "22.10.1",
-    "@types/react-dom": "18.2.0",
     "@types/react": "18.2.0",
+    "@types/react-dom": "18.2.0",
     "clsx": "2.1.1",
     "prism-react-renderer": "2.4.0",
     "react": "18.2.0",
@@ -60,6 +61,7 @@
     "eslint-plugin-react": "7.37.2",
     "globals": "15.12.0",
     "http-server": "14.1.1",
+    "husky": "9.1.7",
     "lcov-total": "2.1.1",
     "onchange": "7.1.0",
     "prettier": "3.4.1",
