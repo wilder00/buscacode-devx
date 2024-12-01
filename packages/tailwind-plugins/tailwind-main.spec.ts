@@ -1,5 +1,5 @@
-import {sum } from './index'
-import {describe, expect, test} from 'vitest'
+import { describe, expect, test } from 'vitest'
+import { sum } from './index'
 
 describe('Tailwind plugins', () => {
   test('Should sum', () => {

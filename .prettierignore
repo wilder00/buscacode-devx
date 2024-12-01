@@ -1,0 +1,8 @@
+public
+build
+dist
+coverage
+
+.cache
+pnpm-lock.yaml
+.docusaurus

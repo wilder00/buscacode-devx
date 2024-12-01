@@ -1,16 +1,15 @@
-import globals from 'globals'
 import pluginJs from '@eslint/js'
-import tseslint from 'typescript-eslint'
-import pluginReact from 'eslint-plugin-react'
-import customEslintRules from './custom/eslint-rules/index.mjs'
-import vitest from '@vitest/eslint-plugin'
 import parser from '@typescript-eslint/parser'
-
+import vitest from '@vitest/eslint-plugin'
+import pluginReact from 'eslint-plugin-react'
+import globals from 'globals'
+import tseslint from 'typescript-eslint'
+import customEslintRules from './custom/eslint-rules/index.mjs'
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
-  {files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}']},
-  {languageOptions: { globals: globals.browser }},
+  { files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'] },
+  { languageOptions: { globals: globals.browser } },
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
   pluginReact.configs.flat.recommended,
@@ -26,22 +25,8 @@ export default [
       'space-before-function-paren': ['error', { named: 'never' }],
       'no-debugger': 'error',
       eqeqeq: ['error', 'always'],
-      'custom/no-use-process-env': 'error'
-    }
-  },
-  {
-    plugins: {
-      custom: customEslintRules
-    },
-    rules: {
-      indent: ['error', 2, { SwitchCase: 1 }],
-      quotes: ['error', 'single'],
-      semi: ['error', 'never'],
-      camelase: 'off',
-      'space-before-function-paren': ['error', { named: 'never' }],
-      'no-debugger': 'error',
-      eqeqeq: ['error', 'always'],
-      'custom/no-use-process-env': 'error'
+      'custom/no-use-process-env': 'error',
+      'react/react-in-jsx-scope': 'off'
     }
   },
   {
@@ -70,6 +55,13 @@ export default [
     }
   },
   {
-    ignores: ['node_modules/', 'dist/']
+    settings: {
+      react: {
+        version: 'detect'
+      }
+    }
   },
+  {
+    ignores: ['node_modules', 'dist', '.docusaurus']
+  }
 ]

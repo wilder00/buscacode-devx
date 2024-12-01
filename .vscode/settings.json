@@ -1,7 +1,55 @@
 {
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "explicit"
+  },
+  "prettier.enable": true,
+  /*using lf for end of line instead of crlf*/
+  "files.eol": "\n",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "eslint.validate": [
+    "javascript",
+    "typescript",
+    "javascriptreact",
+    "javascripttypescript",
+    "typescriptreact",
+    "sql"
+  ],
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[mdx]": {
+    //"editor.formatOnSave": false,
+    //default editor.defaultFormatter which is not prettier, i dont want to use prettier
+    "editor.defaultFormatter": "unifiedjs.vscode-mdx",
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "never"
+    }
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[sql]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "cweijan.vscode-mysql-client2"
+  },
+  "cSpell.language": "en,es-ES",
   "cSpell.words": [
     "buscacode",
     "devx",
+    "docusaurus",
+    "dracula",
+    "esnext",
+    "Katex",
     "Rusin",
     "tseslint"
   ]
