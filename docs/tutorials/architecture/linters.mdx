@@ -132,3 +132,20 @@ A little recommendation for setting the vscode config
 ```
 
 reference: [Alex Rusin](https://www.youtube.com/watch?v=GTDYsV5pyZU)
+
+### Extra package.json
+
+Some commands to run into the scripts: 
+
+```json title="package.json"
+{
+  "scripts": {
+    "lint": "eslint",
+    "lint:fix": "eslint . -c eslint.config.mjs --fix",
+    "lint:check": "eslint . -c eslint.config.mjs --no-fix",
+    "format:fix": "prettier --ignore-path .prettierignore --write .",
+    "format:check": "prettier --ignore-path .prettierignore --check .",
+    "format:watch": "onchange \"**/*\" -- prettier --write --ignore-path .prettierignore --ignore-unknown {{changed}}",
+  }
+}
+```
