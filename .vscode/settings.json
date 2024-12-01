@@ -42,6 +42,14 @@
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "cweijan.vscode-mysql-client2"
   },
+  "tailwindCSS.classAttributes": [
+    "class",
+    "className",
+    "ngClass",
+    "class:list",
+    ".*Styles",
+    ".*Class"
+  ],
   "cSpell.language": "en,es-ES",
   "cSpell.words": [
     "buscacode",

@@ -8,5 +8,6 @@ export default {
   jsxSingleQuote: false,
   quoteProps: 'as-needed',
   endOfLine: 'lf',
-  trailingComma: 'none'
+  trailingComma: 'none',
+  plugins: ['prettier-plugin-tailwindcss']
 }

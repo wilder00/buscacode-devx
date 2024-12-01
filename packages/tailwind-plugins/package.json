@@ -1,0 +1,40 @@
+{
+  "name": "@buscacode/tailwind-plugins",
+  "version": "0.0.0",
+  "description": "Simple package for tailwind css",
+  "keywords": [
+    "buscacode",
+    "tailwind",
+    "plugins"
+  ],
+  "author": "Wilder Trujillo <nadie437@gmail.com>",
+  "homepage": "https://github.com/wilder00/buscacode-devx",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rimraf dist && tsup src/index.ts --dts"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wilder00/buscacode-devx.git",
+    "directory": "packages/tailwind-plugins"
+  },
+  "bugs": {
+    "url": "https://github.com/wilder00/buscacode-devx/issues"
+  },
+  "directories": {
+    "doc": "docs",
+    "packages": "packages"
+  },
+  "dependencies": {
+    "tailwindcss": "3.4.15"
+  },
+  "engines": {
+    "node": ">=18.0"
+  }
+}
