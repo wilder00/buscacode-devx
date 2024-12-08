@@ -2,6 +2,7 @@ import type * as Preset from '@docusaurus/preset-classic'
 import type { Config } from '@docusaurus/types'
 import rehypeKatex from 'rehype-katex'
 import remarkMath from 'remark-math'
+import tailwindPlugin from './plugins/tailwind-config'
 
 import { themes as prismTheme } from 'prism-react-renderer'
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
@@ -38,16 +39,7 @@ const config: Config = {
   markdown: {
     mermaid: true
   },
-  plugins: [
-    [
-      '@docusaurus/plugin-svgr',
-      {
-        svgrConfig: {
-          /* SVGR config */
-        }
-      }
-    ]
-  ],
+  plugins: [tailwindPlugin],
   presets: [
     [
       'classic',
@@ -79,6 +71,14 @@ const config: Config = {
         }
       } satisfies Preset.Options
     ]
+    /* [
+      '@docusaurus/theme-classic',
+      {
+        theme: {
+          customCss: './src/css/custom.css'
+        }
+      } satisfies Preset.Options
+    ] */
   ],
 
   stylesheets: [
@@ -127,6 +127,10 @@ const config: Config = {
         {
           title: 'Docs',
           items: [
+            {
+              label: 'Docs',
+              to: '/docs/tutorial-basics/create-a-page'
+            },
             {
               label: 'Tutorial',
               to: '/docs/intro'

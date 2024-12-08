@@ -1,10 +1,10 @@
 {
-  "name": "@buscacode/tailwind-plugins",
+  "name": "@buscacode/tailwind-utils",
   "version": "0.0.0",
-  "description": "Simple package for plugins to set into the base tailwind css",
+  "description": "Simple package for tailwind utils",
   "keywords": [
     "buscacode",
-    "tailwind plugins",
+    "tailwind utils",
     "plugins"
   ],
   "author": "Wilder Trujillo <nadie437@gmail.com>",
@@ -22,7 +22,7 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/wilder00/buscacode-devx.git",
-    "directory": "packages/tailwind-plugins"
+    "directory": "packages/tailwind-utils"
   },
   "bugs": {
     "url": "https://github.com/wilder00/buscacode-devx/issues"
@@ -32,7 +32,9 @@
     "packages": "packages"
   },
   "dependencies": {
-    "tailwindcss": "3.4.15"
+    "@buscacode/tailwind-base": "workspace:*",
+    "clsx": "2.1.1",
+    "tailwind-merge": "2.5.5"
   },
   "peerDependencies": {
     "tailwindcss": ">=3.4.15"

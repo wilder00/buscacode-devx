@@ -1,10 +1,10 @@
 {
-  "name": "@buscacode/tailwind-plugins",
+  "name": "@buscacode/tailwind-base",
   "version": "0.0.0",
-  "description": "Simple package for plugins to set into the base tailwind css",
+  "description": "Simple package for tailwind css base preset",
   "keywords": [
     "buscacode",
-    "tailwind plugins",
+    "tailwind",
     "plugins"
   ],
   "author": "Wilder Trujillo <nadie437@gmail.com>",
@@ -22,7 +22,7 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/wilder00/buscacode-devx.git",
-    "directory": "packages/tailwind-plugins"
+    "directory": "packages/tailwind-base"
   },
   "bugs": {
     "url": "https://github.com/wilder00/buscacode-devx/issues"

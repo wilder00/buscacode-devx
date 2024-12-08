@@ -17,3 +17,15 @@ pnpm --filter <package_selector> <command>
 ```
 
 More details [here](https://pnpm.io/filtering)
+
+## Add a workspace dependency
+
+```bash
+pnpm add @buscacode/tailwind-plugins@workspace:*
+```
+
+## Add a workspace dependency into another sub dependency
+
+```bash
+pnpm add @buscacode/tailwind-base@workspace:* --filter @buscacode/tailwind-utils
+```
