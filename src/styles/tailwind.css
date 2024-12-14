@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* @layer base {
+  :root {
+    --sl-color-accent-low: #282221;
+    --sl-color-accent: #78655e;
+    --sl-color-accent-high: #cec7c4;
+    --sl-color-white: #ffffff;
+    --sl-color-gray-1: #edeeee;
+    --sl-color-gray-2: #c8c8c9;
+    --sl-color-gray-3: #a3a4a6;
+    --sl-color-gray-4: #57585a;
+    --sl-color-gray-5: #38383a;
+    --sl-color-gray-6: #262728;
+    --sl-color-black: #181819;
+  }
+  :root[data-theme='light'] {
+    --sl-color-accent-low: #dbd5d3;
+    --sl-color-accent: #5d4b44;
+    --sl-color-accent-high: #39302d;
+    --sl-color-white: #181819;
+    --sl-color-gray-1: #262728;
+    --sl-color-gray-2: #38383a;
+    --sl-color-gray-3: #57585a;
+    --sl-color-gray-4: #8b8b8d;
+    --sl-color-gray-5: #c1c2c3;
+    --sl-color-gray-6: #edeeee;
+    --sl-color-gray-7: #f6f6f7;
+    --sl-color-black: #ffffff;
+  }
+} */

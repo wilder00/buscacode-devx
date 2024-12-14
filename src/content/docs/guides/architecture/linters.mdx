@@ -1,0 +1,155 @@
+---
+title: Linters
+description: Relevant information about how to set linters.
+---
+
+import { Tabs, TabItem } from '@astrojs/starlight/components'
+
+# Linters and formatters
+
+## ESlint
+
+Let's add Eslint in our project.
+
+### VScode plugin
+
+We should install the official microsoft plugin of eslint in [this page](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint).
+the current version (30/11/2024) is:
+
+```yaml
+Name: ESLint
+Id: dbaeumer.vscode-eslint
+Description: Integrates ESLint JavaScript into VS Code.
+Version: 3.0.10
+Publisher: Microsoft
+VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
+```
+
+### ESlint node package
+
+<Tabs>
+  <TabItem value="pnpm" label="pnpm" default>
+    ```shell pnpm create @eslint/config@latest ```
+  </TabItem>
+  <TabItem value="yarn" label="yarn">
+    ```shell yarn create @eslint/config ```
+  </TabItem>
+  <TabItem value="npm" label="npm">
+    ```bash npm init @eslint/config@latest ```
+  </TabItem>
+</Tabs>
+
+More about [Eslint](https://eslint.org/docs/latest/use/getting-started).
+
+To solve some issues with the eslint version as a dependency of some packages, we should
+overwrite the dependency.
+
+```json title="package.json"
+{
+  //highlight-next-line
+  "overrides": { "eslint": "^9.6.0" }
+}
+```
+
+---
+
+## Prettier
+
+### Prettier node package
+
+we should install the formatter tool
+
+<Tabs>
+  <TabItem value="pnpm" label="pnpm" default>
+    ```shell pnpm add --save-dev eslint-plugin-prettier eslint-config-prettier
+    ```
+  </TabItem>
+  <TabItem value="yarn" label="yarn">
+    ```shell yarn add --save-dev eslint-plugin-prettier eslint-config-prettier
+    ```
+  </TabItem>
+  <TabItem value="npm" label="npm">
+    ```bash npm install --save-dev eslint-plugin-prettier eslint-config-prettier
+    ```
+  </TabItem>
+</Tabs>
+
+also install prettier itself.
+
+<Tabs>
+  <TabItem value="pnpm" label="pnpm" default>
+    ```shell title="pnpm" pnpm add --save-dev --save-exact prettier ```
+  </TabItem>
+  <TabItem value="yarn" label="yarn">
+    ```shell yarn add --save-dev --save-exact prettier ```
+  </TabItem>
+  <TabItem value="npm" label="npm">
+    ```bash pnpm install --save-dev --save-exact prettier ```
+  </TabItem>
+</Tabs>
+
+Now we should add the `eslintPluginPrettierRecommended` into `eslint.config.mjs`
+
+```ts title="eslint.config.mjs" {5}
+import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
+export default [
+  { files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'] },
+  { languageOptions: { globals: globals.browser } },
+  eslintPluginPrettierRecommended
+]
+```
+
+:::note
+
+It could be posible that is not necessary to add the `eslintPluginPrettierRecommended`.
+It brings me some troubles that has been solved without implementing it.
+
+:::
+
+### VScode config
+
+A little recommendation for setting the vscode config
+
+```jsonc title=".vscode/settings.json"
+{
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "explicit"
+  },
+  "prettier.enable": true,
+  /*using lf for end of line instead of crlf*/
+  "files.eol": "\n",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "eslint.validate": ["javascript", "typescript"],
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "cSpell.language": "en,es-ES",
+  "cSpell.words": ["express", "lcov", "tseslint", "UUIDV"]
+}
+```
+
+reference: [Alex Rusin](https://www.youtube.com/watch?v=GTDYsV5pyZU)
+
+### Extra package.json
+
+Some commands to run into the scripts:
+
+```json title="package.json" showLineNumbers
+{
+  "scripts": {
+    "lint": "eslint",
+    "lint:fix": "eslint . -c eslint.config.mjs --fix",
+    "lint:check": "eslint . -c eslint.config.mjs --no-fix",
+    "format:fix": "prettier --ignore-path .prettierignore --write .",
+    "format:check": "prettier --ignore-path .prettierignore --check .",
+    "format:watch": "onchange \"**/*\" -- prettier --write --ignore-path .prettierignore --ignore-unknown {{changed}}"
+  }
+}
+```

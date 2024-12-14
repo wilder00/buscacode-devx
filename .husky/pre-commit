@@ -1,1 +1,1 @@
-pnpm run format:check && pnpm lint:check && pnpm test
+astro check && pnpm run format:check && pnpm lint:check && pnpm test

@@ -26,7 +26,8 @@ export default [
       'no-debugger': 'error',
       eqeqeq: ['error', 'always'],
       'custom/no-use-process-env': 'error',
-      'react/react-in-jsx-scope': 'off'
+      'react/react-in-jsx-scope': 'off',
+      '@typescript-eslint/consistent-type-imports': 'error'
     }
   },
   {
@@ -62,6 +63,6 @@ export default [
     }
   },
   {
-    ignores: ['**/node_modules', '**/dist', '.docusaurus']
+    ignores: ['**/node_modules', '**/dist', '.docusaurus', '.astro']
   }
 ]

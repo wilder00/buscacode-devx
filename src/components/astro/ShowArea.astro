@@ -1,0 +1,23 @@
+---
+import { cn } from '@buscacode/tailwind-utils'
+interface Props {
+  className: string
+}
+const { className } = Astro.props
+---
+
+<div
+  class={cn(
+    'width-full flex min-h-[150px] flex-col items-stretch justify-stretch',
+    className
+  )}
+>
+  <div
+    class={cn(
+      'flex h-full w-full flex-grow items-center justify-center bg-bc-neutral p-4 dark:bg-bc-inverse-900',
+      'rounded-md'
+    )}
+  >
+    <slot />
+  </div>
+</div>

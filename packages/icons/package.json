@@ -1,0 +1,50 @@
+{
+  "name": "@buscacode/icons",
+  "version": "0.0.0",
+  "description": "Showing icons",
+  "keywords": [
+    "buscacode",
+    "icons"
+  ],
+  "author": "Wilder Trujillo <nadie437@gmail.com>",
+  "homepage": "https://github.com/wilder00/buscacode-devx",
+  "sideEffects": false,
+  "main": "src/index.ts",
+  "module": "src/index.ts",
+  "publishConfig": {
+    "main": "dist/index.js",
+    "module": "dist/index.js",
+    "types": "dist/index.d.ts"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rimraf dist && svgr -- assets && pnpm run format:fix && pnpm run lint:fix && tsup src --dts",
+    "format:fix": "prettier --write ./src",
+    "lint:fix": "eslint ./src -c ../../eslint.config.mjs --fix"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wilder00/buscacode-devx.git",
+    "directory": "packages/icons"
+  },
+  "bugs": {
+    "url": "https://github.com/wilder00/buscacode-devx/issues"
+  },
+  "directories": {
+    "doc": "docs",
+    "packages": "packages"
+  },
+  "engines": {
+    "node": ">=18.0"
+  },
+  "peerDependencies": {
+    "react": "^16 || ^17 || ^18",
+    "react-dom": "^16 || ^17 || ^18"
+  },
+  "devDependencies": {
+    "@svgr/cli": "8.1.0"
+  }
+}

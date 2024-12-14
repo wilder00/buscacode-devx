@@ -1,26 +1,38 @@
 /** @type {import('tailwindcss').Config} */
 
-import { defaultConfig } from '@buscacode/tailwind-base'
+import starlightPlugin from '@astrojs/starlight-tailwind'
+import { computedDefaultConfig } from '@buscacode/tailwind-base'
+import colors from 'tailwindcss/colors'
 
 const config = {
-  presets: [defaultConfig],
+  presets: [computedDefaultConfig],
+  relative: true,
   content: [
-    './src/**/*.{ts,tsx}',
-    './docs/**/*.{md,mdx}',
     './packages/**/src/*.{ts,tsx}',
-    {
-      exclude: ['./packages/**/node_modules/**/*']
-    }
+    './src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}',
+    '!./**/node_modules/**',
+    '!./node_modules/**/*'
   ],
-  darkMode: ['[data-theme="dark"]'],
+  darkMode: ['class', '[data-theme="dark"]'],
+
   /* corePlugins: {
     preflight: false,
     container: false
   }, */
   theme: {
-    extend: {}
+    extend: {
+      colors: {
+        // Your preferred accent color. Indigo is closest to Starlight’s defaults.
+        accent: colors.indigo,
+        // Your preferred gray scale. Zinc is closest to Starlight’s defaults.
+        gray: colors.zinc
+      },
+      fontFamily: {
+        sans: ['"Atkinson Hyperlegible"', '"Inter"', '"sans - serif"']
+      }
+    }
   },
-  plugins: []
+  plugins: [starlightPlugin()]
 }
 
 export default config

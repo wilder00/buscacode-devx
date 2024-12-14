@@ -1,0 +1,25 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro'
+---
+
+<StarlightPage
+  frontmatter={{ title: 'My custom page' }}
+  sidebar={[
+    { label: 'Home', link: '/' },
+    {
+      label: 'Constellations',
+      items: [
+        { label: 'Andromeda', link: '/andromeda/' },
+        { label: 'Orion', link: '/orion/' },
+        { label: 'Ursa Minor', link: '/ursa-minor/', badge: 'Stub' }
+      ]
+    }
+  ]}
+>
+  <p>This is a custom page with a custom component:</p>
+  <p
+    class="text-primary-500 bg-primary-500 dark:bg-primary-800 dark:text-inverse-500"
+  >
+    Testing the tailwind configuration
+  </p>
+</StarlightPage>

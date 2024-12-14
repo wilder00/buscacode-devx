@@ -1,6 +1,6 @@
 {
   // This file is not used in compilation. It is here just for a nice editor experience.
-  "extends": "@docusaurus/tsconfig",
+  "extends": "astro/tsconfigs/base",
   "compilerOptions": {
     "jsx": "react-jsx", // Override the conflicting setting
     "baseUrl": ".",
@@ -22,10 +22,11 @@
     "isolatedModules": true,
     "noEmit": true,
     "paths": {
-      "react": ["./node_modules/@types/react"]
-    }
+      "@/*": ["src/*"]
+    },
+    "verbatimModuleSyntax": true
   },
   "types": ["vitest/globals", "react", "react-dom"],
-  "exclude": [".docusaurus", "build"],
-  "include": ["./**/*.ts", "./**/*.tsx", "./**/*.spec.ts"]
+  "exclude": ["dist", "build"],
+  "include": ["./**/*.ts", "./**/*.tsx", "./**/*.spec.ts", ".astro/types.d.ts"]
 }

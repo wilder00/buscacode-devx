@@ -1,0 +1,30 @@
+---
+title: Buscacode Icons
+sidebar:
+  label: Icons
+  order: 1
+  badge:
+    text: Top
+    variant: success #values: note, tip, danger, caution or success.
+---
+
+import IconsSection from '@/sections/react/IconsSection'
+import ShowArea from '@/components/astro/ShowArea.astro'
+
+Icons to be used with React.
+
+## Example of import
+
+```ts
+import { Spinner } from '@buscacode/icons'
+```
+
+## List
+
+A display of enabled icons to be imported. Do `one click` to copy the icon name and `doble click` to copy the import of the icon.
+
+<ShowArea>
+  <div className="w-full px-4 py-8">
+    <IconsSection client:load />
+  </div>
+</ShowArea>

@@ -8,9 +8,13 @@
   ],
   "author": "Wilder Trujillo <nadie437@gmail.com>",
   "homepage": "https://github.com/wilder00/buscacode-devx",
-  "main": "dist/index.js",
-  "module": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "src/index.ts",
+  "module": "src/index.ts",
+  "publishConfig": {
+    "main": "dist/index.js",
+    "module": "dist/index.js",
+    "types": "dist/index.d.ts"
+  },
   "files": [
     "dist"
   ],
@@ -30,13 +34,11 @@
     "doc": "docs",
     "packages": "packages"
   },
-  "dependencies": {
-    "tailwindcss": "3.4.15"
-  },
-  "peerDependencies": {
-    "tailwindcss": ">=3.4.15"
-  },
   "engines": {
     "node": ">=18.0"
+  },
+  "dependencies": {
+    "@buscacode/icons": "workspace:*",
+    "@buscacode/tailwind-utils": "workspace:*"
   }
 }

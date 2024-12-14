@@ -16,7 +16,8 @@
     "noEmit": true,
     // "types": ["@testing-library/jest-dom"],
     "jsx": "react-jsx",
-    "baseUrl": "."
+    "baseUrl": ".",
+    "verbatimModuleSyntax": true
   },
   "include": ["src"],
   "exclude": ["node_modules"]

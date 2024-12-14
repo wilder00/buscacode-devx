@@ -15,6 +15,9 @@
     "typescriptreact",
     "sql"
   ],
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -35,9 +38,13 @@
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[astro]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[javascriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+
   "[sql]": {
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "cweijan.vscode-mysql-client2"
@@ -52,13 +59,23 @@
   ],
   "cSpell.language": "en,es-ES",
   "cSpell.words": [
+    "astrojs",
     "buscacode",
+    "catppuccin",
     "devx",
     "docusaurus",
     "dracula",
     "esnext",
+    "frontmatter",
+    "houston",
+    "Hyperlegible",
     "Katex",
     "Rusin",
+    "tailwindcss",
+    "tokyo",
     "tseslint"
-  ]
+  ],
+  "[svg]": {
+    "editor.defaultFormatter": "jock.svg"
+  }
 }
