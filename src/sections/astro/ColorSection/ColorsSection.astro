@@ -21,10 +21,17 @@ import { colorsBase } from '@buscacode/tailwind-plugins'
                     class="box-border h-8 w-8"
                     style={{ background: value2 }}
                     title={key2}
+                    data-color-class={`${key}-${key2}`}
+                    data-color={value2}
                   />
                 ))
             ) : (
-              <div class="size-8 w-96" style={{ background: value }} />
+              <div
+                class="size-8 w-96"
+                style={{ background: value }}
+                data-color-class={`${key}`}
+                data-color={value}
+              />
             )}
           </span>
         </div>
@@ -32,3 +39,23 @@ import { colorsBase } from '@buscacode/tailwind-plugins'
     ))
   }
 </div>
+
+<script>
+  const colors = document.querySelectorAll('[data-color-class]')
+  colors.forEach((color: Element) => {
+    color.addEventListener('click', () => {
+      const classColor = (color as HTMLElement).dataset.colorClass
+      if (classColor) {
+        navigator?.clipboard.writeText(classColor)
+      }
+    })
+    color.addEventListener('dblclick', () => {
+      const colorComputed = window
+        .getComputedStyle(color)
+        .getPropertyValue('background-color')
+      if (colorComputed) {
+        navigator?.clipboard.writeText(colorComputed)
+      }
+    })
+  })
+</script>

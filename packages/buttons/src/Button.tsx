@@ -22,12 +22,12 @@ export default function Button({
   return (
     <button
       className={cn(
-        'border-white bg-bc-secondary-600 text-bc-neutral-500 enabled:hover:bg-bc-secondary-400 dark:border-slate-600 dark:bg-slate-900 dark:enabled:hover:bg-slate-800',
-        'cursor-pointer rounded-md border duration-300 enabled:transition-transform enabled:active:scale-95',
+        'border-bc-neutral-500 bg-bc-secondary-600 text-bc-neutral-500 enabled:hover:bg-bc-secondary-400 dark:border-bc-surface-50 dark:bg-bc-surface-500 dark:enabled:hover:bg-bc-surface-300',
+        'cursor-pointer rounded-md border duration-300 enabled:transition-transform enabled:active:scale-95 disabled:cursor-default',
         'relative flex items-center justify-center gap-1',
         'px-3 py-1 text-xs font-thin',
         {
-          'disabled:cursor-not-allowed disabled:opacity-40 disabled:dark:bg-slate-900':
+          'disabled:cursor-not-allowed disabled:opacity-40 disabled:dark:bg-bc-surface-500':
             disabled
         },
         className
