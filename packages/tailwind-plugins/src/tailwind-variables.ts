@@ -33,15 +33,14 @@ export const colorsBase = Object.fromEntries(
       const key1 = colorKey as keyof typeof baseColors
       const value = baseColors[key1]
       if (typeof value === 'string') {
-        list.push([`bc-${key1}`, `var(--bc-color-${colorKey}, ${value})`])
+        list.push([`bc-${key1}`, value])
         return list
       }
 
       const colorVariants: Record<ColorIntensity | string, string> = {}
       Object.keys(value).forEach((intensityKey) => {
         const key2 = intensityKey as keyof typeof value
-        colorVariants[key2] =
-          `var(--bc-color-${colorKey}-${intensityKey}, ${value[key2]})`
+        colorVariants[key2] = value[key2]
       })
       list.push([`bc-${key1}`, colorVariants])
       return list
