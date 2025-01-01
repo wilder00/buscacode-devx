@@ -8,7 +8,7 @@ const baseColors: Record<Colors, Record<ColorIntensity, string> | string> = {
   //surface: getColorIntensitiesByColor('#c6d3fa'),
   surface: getColorIntensitiesByColor('#0f172a'),
   neutral: getColorIntensitiesByColor('#faf9f6'),
-  inverse: getColorIntensitiesByColor('#161238'),
+  inverse: getColorIntensitiesByColor('#0d1117'),
   info: '#1565c0',
   success: '#2e7d32',
   warning: '#f9a825',

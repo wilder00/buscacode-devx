@@ -21,10 +21,20 @@
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "[mdx]": {
+  /* "[mdx]": {
     //"editor.formatOnSave": false,
     //default editor.defaultFormatter which is not prettier, i dont want to use prettier
     "editor.defaultFormatter": "unifiedjs.vscode-mdx",
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "never"
+    }
+  }, */
+  "[mdx]": {
+    //"editor.formatOnSave": false,
+    //default editor.defaultFormatter which is not prettier, i dont want to use prettier
+    //"editor.defaultFormatter": "unifiedjs.vscode-mdx",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
       "source.organizeImports": "never"
     }

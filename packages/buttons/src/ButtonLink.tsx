@@ -1,28 +1,26 @@
 import { cn } from '@buscacode/tailwind-utils'
+import React from 'react'
 import type { Size } from './Buttons.types'
-import SpinnerLoader from './SpinnerLoader'
-export interface ButtonProps {
+export interface ButtonLinkProps {
   disabled?: boolean
-  loading?: boolean
   className?: string
   size?: Size
-  onClick?: () => void
+  href?: string
+  target?: '_blank' | '_self'
 }
-export default function Button({
+
+export default function ButtonLink({
   children,
   className,
-  disabled,
-  loading,
-  onClick: onclick
-}: React.PropsWithChildren<ButtonProps>) {
-  const handleClick = () => {
-    if (disabled || loading) return
-    onclick?.()
-  }
+  disabled = false,
+  href,
+  target = '_self',
+  ...nextProps
+}: React.PropsWithChildren<ButtonLinkProps>) {
   return (
-    <button
+    <a
       className={cn(
-        'border-bc-neutral-500 bg-bc-primary-300 text-bc-neutral-500 enabled:hover:bg-bc-primary-200 dark:border-bc-surface-50 dark:bg-bc-surface-500 dark:enabled:hover:bg-bc-surface-300',
+        'border-bc-neutral-500 bg-bc-secondary-600 text-bc-neutral-500 enabled:hover:bg-bc-secondary-400 dark:border-bc-surface-50 dark:bg-bc-surface-500 dark:enabled:hover:bg-bc-surface-300',
         'cursor-pointer rounded-md border duration-300 enabled:transition-transform enabled:active:scale-95 disabled:cursor-default',
         'relative flex items-center justify-center gap-1',
         'px-3 py-1 text-xs font-thin',
@@ -32,17 +30,17 @@ export default function Button({
         },
         className
       )}
-      onClick={handleClick}
-      disabled={disabled || loading}
+      {...nextProps}
+      {...(!disabled && { href })}
+      target={target}
     >
       <span
         className={cn({
-          'opacity-0': loading
+          'opacity-1': !disabled
         })}
       >
         {children}
       </span>
-      {loading && <SpinnerLoader />}
-    </button>
+    </a>
   )
 }
