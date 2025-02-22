@@ -1,0 +1,161 @@
+---
+title: Buscacode Inputs
+sidebar:
+  label: Inputs
+---
+
+import React from 'react'
+import { Input } from '@buscacode/inputs'
+import { EyeOn } from '@buscacode/icons'
+import ShowArea from '@/components/astro/ShowArea.astro'
+
+Inputs to be used with buscacode
+
+## Simple use
+
+<ShowArea title="algo">
+  <Input
+    label="Label"
+    leading={React.createElement(EyeOn)}
+    placeholder="Password"
+  />
+</ShowArea>
+
+```tsx
+<Input
+  label="Label"
+  leading={
+    <EyeOn/>
+  }
+  placeholder="Password"
+/>
+```
+
+## Modifying leading icon colors
+
+<ShowArea title="algo">
+  <Input
+    value="Hello World"
+    leading={React.createElement(
+      'span',
+      {
+        className:
+          'text-bc-primary-50 dark:text-bc-neutral-400 flex items-center justify-center'
+      },
+      React.createElement(EyeOn)
+    )}
+  />
+</ShowArea>
+
+```tsx
+<Input leading={
+  <span className="text-bc-primary-50 dark:text-bc-neutral-400 flex items-center justify-center">
+    <EyeOn/>
+  </span>
+} />
+```
+
+## Modifying trailing icon colors
+
+<ShowArea title="algo">
+  <Input
+    value="Hello World"
+    trailing={React.createElement(
+      'span',
+      {
+        className:
+          'text-bc-surface-900 dark:text-bc-neutral-400 flex items-center justify-center'
+      },
+      React.createElement(EyeOn)
+    )}
+  />
+</ShowArea>
+
+```tsx
+<Input
+  value="Hello World"
+  trailing={
+    <span className="text-bc-surface-900 dark:text-bc-neutral-400 flex items-center justify-center">
+      <EyeOn/>
+    </span>
+  }
+/>
+```
+
+## Placeholder
+
+<ShowArea title="algo">
+  <Input placeholder="Write something..." />
+</ShowArea>
+
+```tsx
+<Input
+  placeholder="Write something..."
+/>
+```
+
+## Error
+
+<ShowArea title="algo">
+  <Input placeholder="Write something..." error="Not allowed" />
+</ShowArea>
+
+```tsx
+<Input
+  placeholder="Write something..."
+  error="Not allowed"
+/>
+```
+
+## Disabled
+
+<ShowArea title="algo">
+  <Input
+    value="Hello World"
+    label="Label"
+    trailing={React.createElement(
+      'span',
+      {
+        className:
+          'text-bc-surface-900 dark:text-bc-neutral-400 flex items-center justify-center'
+      },
+      React.createElement(EyeOn)
+    )}
+    disabled
+  />
+</ShowArea>
+
+```tsx
+<Input
+  value="Hello World"
+  label="Label"
+  trailing={
+    <span className="text-bc-surface-900 dark:text-bc-neutral-400 flex items-center justify-center">
+      <EyeOn/>
+    </span>
+  }
+  disabled
+/>
+```
+
+## Readonly
+
+<ShowArea title="algo">
+  <Input
+    value="Hello World"
+    label="Label"
+    leading={React.createElement(EyeOn)}
+    trailing={React.createElement(EyeOn)}
+    readonly
+  />
+</ShowArea>
+
+```tsx
+<Input
+  value="Hello World"
+  label="Label"
+  leading={<EyeOn/>}
+  trailing={<EyeOn/>}
+  readonly
+/>
+```

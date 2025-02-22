@@ -35,6 +35,12 @@ importers:
       '@buscacode/icons':
         specifier: workspace:*
         version: link:packages/icons
+      '@buscacode/inputs':
+        specifier: workspace:*
+        version: link:packages/inputs
+      '@buscacode/selects':
+        specifier: workspace:*
+        version: link:packages/selects
       '@buscacode/tailwind-base':
         specifier: workspace:*
         version: link:packages/tailwind-base
@@ -169,6 +175,18 @@ importers:
       '@svgr/cli':
         specifier: 8.1.0
         version: 8.1.0(typescript@5.7.2)
+
+  packages/inputs:
+    dependencies:
+      '@buscacode/tailwind-utils':
+        specifier: workspace:*
+        version: link:../tailwind-utils
+
+  packages/selects:
+    dependencies:
+      '@buscacode/tailwind-utils':
+        specifier: workspace:*
+        version: link:../tailwind-utils
 
   packages/tailwind-base:
     dependencies:

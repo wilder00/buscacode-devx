@@ -2,7 +2,7 @@
 module.exports = {
   icon: true,
   typescript: true,
-  ref: true,
+  ref: false,
   titleProp: true,
   outDir: 'src',
   jsxRuntime: 'automatic'

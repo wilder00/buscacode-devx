@@ -51,8 +51,7 @@ export default defineConfig({
       })
     ),
     react({
-      include: ['**/react/*'],
-      jsxImportSource: '@/components/react/IconsSection'
+      include: ['**/react/*', '**/content/docs/components/**.mdx']
     })
   ],
 

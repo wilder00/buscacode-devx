@@ -34,6 +34,8 @@
     "@astrojs/tailwind": "5.1.3",
     "@buscacode/buttons": "workspace:*",
     "@buscacode/icons": "workspace:*",
+    "@buscacode/inputs": "workspace:*",
+    "@buscacode/selects": "workspace:*",
     "@buscacode/tailwind-base": "workspace:*",
     "@buscacode/tailwind-plugins": "workspace:*",
     "@buscacode/tailwind-utils": "workspace:*",
