@@ -32,6 +32,9 @@ importers:
       '@buscacode/buttons':
         specifier: workspace:*
         version: link:packages/buttons
+      '@buscacode/chips':
+        specifier: workspace:*
+        version: link:packages/chips
       '@buscacode/icons':
         specifier: workspace:*
         version: link:packages/icons
@@ -155,6 +158,15 @@ importers:
         version: 2.1.6(@types/node@22.10.1)(jiti@1.21.6)(jsdom@25.0.1)(yaml@2.6.1)
 
   packages/buttons:
+    dependencies:
+      '@buscacode/icons':
+        specifier: workspace:*
+        version: link:../icons
+      '@buscacode/tailwind-utils':
+        specifier: workspace:*
+        version: link:../tailwind-utils
+
+  packages/chips:
     dependencies:
       '@buscacode/icons':
         specifier: workspace:*

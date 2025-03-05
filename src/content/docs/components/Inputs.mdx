@@ -22,13 +22,7 @@ Inputs to be used with buscacode
 </ShowArea>
 
 ```tsx
-<Input
-  label="Label"
-  leading={
-    <EyeOn/>
-  }
-  placeholder="Password"
-/>
+<Input label="Label" leading={<EyeOn />} placeholder="Password" />
 ```
 
 ## Modifying leading icon colors
@@ -48,11 +42,13 @@ Inputs to be used with buscacode
 </ShowArea>
 
 ```tsx
-<Input leading={
-  <span className="text-bc-primary-50 dark:text-bc-neutral-400 flex items-center justify-center">
-    <EyeOn/>
-  </span>
-} />
+<Input
+  leading={
+    <span className="flex items-center justify-center text-bc-primary-50 dark:text-bc-neutral-400">
+      <EyeOn />
+    </span>
+  }
+/>
 ```
 
 ## Modifying trailing icon colors
@@ -75,8 +71,8 @@ Inputs to be used with buscacode
 <Input
   value="Hello World"
   trailing={
-    <span className="text-bc-surface-900 dark:text-bc-neutral-400 flex items-center justify-center">
-      <EyeOn/>
+    <span className="flex items-center justify-center text-bc-surface-900 dark:text-bc-neutral-400">
+      <EyeOn />
     </span>
   }
 />
@@ -89,9 +85,7 @@ Inputs to be used with buscacode
 </ShowArea>
 
 ```tsx
-<Input
-  placeholder="Write something..."
-/>
+<Input placeholder="Write something..." />
 ```
 
 ## Error
@@ -101,10 +95,7 @@ Inputs to be used with buscacode
 </ShowArea>
 
 ```tsx
-<Input
-  placeholder="Write something..."
-  error="Not allowed"
-/>
+<Input placeholder="Write something..." error="Not allowed" />
 ```
 
 ## Disabled
@@ -130,8 +121,8 @@ Inputs to be used with buscacode
   value="Hello World"
   label="Label"
   trailing={
-    <span className="text-bc-surface-900 dark:text-bc-neutral-400 flex items-center justify-center">
-      <EyeOn/>
+    <span className="flex items-center justify-center text-bc-surface-900 dark:text-bc-neutral-400">
+      <EyeOn />
     </span>
   }
   disabled
@@ -154,8 +145,8 @@ Inputs to be used with buscacode
 <Input
   value="Hello World"
   label="Label"
-  leading={<EyeOn/>}
-  trailing={<EyeOn/>}
+  leading={<EyeOn />}
+  trailing={<EyeOn />}
   readonly
 />
 ```

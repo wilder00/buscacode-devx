@@ -1,0 +1,44 @@
+{
+  "name": "@buscacode/chips",
+  "version": "0.0.0",
+  "description": "A simple chips components",
+  "keywords": [
+    "buscacode",
+    "chips"
+  ],
+  "author": "Wilder Trujillo <nadie437@gmail.com>",
+  "homepage": "https://github.com/wilder00/buscacode-devx",
+  "main": "src/index.ts",
+  "module": "src/index.ts",
+  "publishConfig": {
+    "main": "dist/index.js",
+    "module": "dist/index.mjs",
+    "types": "dist/index.d.ts"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rimraf dist && tsup src/index.ts --dts"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wilder00/buscacode-devx.git",
+    "directory": "packages/chips"
+  },
+  "bugs": {
+    "url": "https://github.com/wilder00/buscacode-devx/issues"
+  },
+  "directories": {
+    "doc": "docs",
+    "packages": "packages"
+  },
+  "engines": {
+    "node": ">=18.0"
+  },
+  "dependencies": {
+    "@buscacode/icons": "workspace:*",
+    "@buscacode/tailwind-utils": "workspace:*"
+  }
+}
