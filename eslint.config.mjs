@@ -19,7 +19,11 @@ export default [
     },
     rules: {
       indent: ['error', 2, { SwitchCase: 1 }],
-      quotes: ['error', 'single'],
+      quotes: [
+        'error',
+        'single',
+        { avoidEscape: true, allowTemplateLiterals: true }
+      ],
       semi: ['error', 'never'],
       camelase: 'off',
       'space-before-function-paren': ['error', { named: 'never' }],

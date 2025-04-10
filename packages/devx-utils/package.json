@@ -1,0 +1,42 @@
+{
+  "name": "@buscacode/devx-utils",
+  "version": "0.0.0",
+  "description": "Simple package for devx utils",
+  "keywords": [
+    "buscacode",
+    "devx utils",
+    "plugins"
+  ],
+  "author": "Wilder Trujillo <nadie437@gmail.com>",
+  "homepage": "https://github.com/wilder00/buscacode-devx",
+  "main": "src/index.ts",
+  "module": "src/index.ts",
+  "publishConfig": {
+    "main": "dist/index.js",
+    "module": "dist/index.js",
+    "types": "dist/index.d.ts"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rimraf dist && tsup src/index.ts --dts"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wilder00/buscacode-devx.git",
+    "directory": "packages/devx-utils"
+  },
+  "bugs": {
+    "url": "https://github.com/wilder00/buscacode-devx/issues"
+  },
+  "directories": {
+    "doc": "docs",
+    "packages": "packages"
+  },
+  "dependencies": {},
+  "engines": {
+    "node": ">=16.0"
+  }
+}

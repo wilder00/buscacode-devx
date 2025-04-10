@@ -35,12 +35,18 @@ importers:
       '@buscacode/chips':
         specifier: workspace:*
         version: link:packages/chips
+      '@buscacode/devx-utils':
+        specifier: workspace:*
+        version: link:packages/devx-utils
       '@buscacode/icons':
         specifier: workspace:*
         version: link:packages/icons
       '@buscacode/inputs':
         specifier: workspace:*
         version: link:packages/inputs
+      '@buscacode/selectable':
+        specifier: workspace:*
+        version: link:packages/selectable
       '@buscacode/selects':
         specifier: workspace:*
         version: link:packages/selects
@@ -175,6 +181,8 @@ importers:
         specifier: workspace:*
         version: link:../tailwind-utils
 
+  packages/devx-utils: {}
+
   packages/icons:
     dependencies:
       react:
@@ -190,6 +198,18 @@ importers:
 
   packages/inputs:
     dependencies:
+      '@buscacode/tailwind-utils':
+        specifier: workspace:*
+        version: link:../tailwind-utils
+
+  packages/selectable:
+    dependencies:
+      '@buscacode/devx-utils':
+        specifier: workspace:*
+        version: link:../devx-utils
+      '@buscacode/icons':
+        specifier: workspace:*
+        version: link:../icons
       '@buscacode/tailwind-utils':
         specifier: workspace:*
         version: link:../tailwind-utils

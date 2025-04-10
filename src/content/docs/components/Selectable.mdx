@@ -1,0 +1,88 @@
+---
+title: Buscacode Selectable
+sidebar:
+  label: Selectable
+---
+
+import React from 'react'
+import { Selectable } from '@buscacode/selectable'
+import {
+  SelectableBase,
+  SelectableWithOptions,
+  SelectableWithOptionsLarge,
+  SelectableWithEnableUnselect,
+  SelectableWithMultiple
+} from './Selectable.tsx'
+import ShowArea from '@/components/astro/ShowArea.astro'
+
+Selectable to be used with buscacode
+
+## Simple use
+
+<ShowArea title="algo">
+  <SelectableBase client:load />
+</ShowArea>
+
+```tsx
+<Chip text="a despicable me" />
+```
+
+## With options
+
+<ShowArea title="algo">
+  <SelectableWithOptions client:load />
+</ShowArea>
+
+```tsx
+<Chip
+  text="El texto"
+  onClick={() => {
+    console.log('Los Chips')
+  }}
+/>
+```
+
+## With large option
+
+<ShowArea title="algo">
+  <SelectableWithOptionsLarge client:load />
+</ShowArea>
+
+```tsx
+<Chip
+  text="El texto"
+  onClick={() => {
+    console.log('Los Chips')
+  }}
+/>
+```
+
+## With enable unselect
+
+<ShowArea title="algo">
+  <SelectableWithEnableUnselect client:load />
+</ShowArea>
+
+```tsx
+<Chip
+  text="El texto"
+  onClick={() => {
+    console.log('Los Chips')
+  }}
+/>
+```
+
+## With multiple options
+
+<ShowArea title="algo">
+  <SelectableWithMultiple client:load />
+</ShowArea>
+
+```tsx
+<Chip
+  text="El texto"
+  onClick={() => {
+    console.log('Los Chips')
+  }}
+/>
+```
