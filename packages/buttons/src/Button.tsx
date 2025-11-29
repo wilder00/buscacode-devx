@@ -33,9 +33,9 @@ export default function Button({
         {
           'border-bc-neutral-500 bg-bc-primary-300 text-bc-neutral-500 enabled:hover:bg-bc-primary-200 dark:border-bc-surface-50 dark:bg-bc-surface-500 dark:enabled:hover:bg-bc-surface-300':
             !outlined && !textOnly,
-          'border-bc-primary-200 bg-transparent text-bc-primary-500 dark:border-bc-surface-50 dark:text-bc-neutral-500':
+          'border-bc-primary-200 text-bc-primary-500 dark:border-bc-surface-50 dark:text-bc-neutral-500 bg-transparent':
             outlined && !textOnly,
-          'underline-offset-3 border-transparent bg-transparent text-bc-primary-500 underline dark:text-bc-neutral-500':
+          'text-bc-primary-500 dark:text-bc-neutral-500 border-transparent bg-transparent underline underline-offset-3':
             textOnly
         },
         'cursor-pointer rounded-md border duration-300 enabled:transition-transform enabled:active:scale-95 disabled:cursor-default',
@@ -43,7 +43,7 @@ export default function Button({
         'px-3 py-1 text-sm font-thin',
         {
           'w-full': fullSize,
-          'select-none disabled:cursor-not-allowed disabled:opacity-40 disabled:dark:bg-bc-surface-500':
+          'disabled:dark:bg-bc-surface-500 select-none disabled:cursor-not-allowed disabled:opacity-40':
             disabled,
           'disabled:dark:bg-transparent': disabled && (outlined || textOnly)
         },

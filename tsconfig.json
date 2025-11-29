@@ -1,18 +1,19 @@
 {
   // This file is not used in compilation. It is here just for a nice editor experience.
-  "extends": "astro/tsconfigs/base",
   "compilerOptions": {
     "jsx": "react-jsx", // Override the conflicting setting
     "baseUrl": ".",
-    // "strict": true,
+    "rootDirs": [".", "./.react-router/types"],
+    "strict": true,
     "allowUmdGlobalAccess": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     //-------------
-    "target": "es5",
-    "module": "esnext",
-    "lib": ["dom", "esnext"],
+    "lib": ["DOM", "DOM.Iterable", "ES2022", "ESNext"],
+    "types": ["node", "vite/client"],
+    "target": "ES2022",
+    "module": "ES2022",
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -22,11 +23,20 @@
     "isolatedModules": true,
     "noEmit": true,
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["./app/*"]
     },
     "verbatimModuleSyntax": true
   },
   "types": ["vitest/globals", "react", "react-dom"],
   "exclude": ["dist", "build"],
-  "include": ["./**/*.ts", "./**/*.tsx", "./**/*.spec.ts", ".astro/types.d.ts"]
+  "include": [
+    "./**/*.ts",
+    "./**/*.tsx",
+    "./**/*.spec.ts",
+    "./**/types.d.ts",
+    "**/*",
+    "**/.server/**/*",
+    "**/.client/**/*",
+    ".react-router/types/**/*"
+  ]
 }

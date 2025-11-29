@@ -5,21 +5,23 @@ import React, {
   useEffect,
   useMemo,
   useRef,
-  useState
+  useState,
+  type ReactNode
 } from 'react'
 import Arrow from './Arrow'
 import Dropdown from './Dropdown'
 import type { OptionValue, SelectableOption, Size } from './Selectable.types'
 
-export interface SelectableProps<T = OptionValue | OptionValue[]>
-  extends React.RefAttributes<HTMLInputElement> {
+export interface SelectableProps<
+  T = OptionValue | OptionValue[]
+> extends React.RefAttributes<HTMLInputElement> {
   className?: string
   disabled?: boolean
   size?: Size
   label?: string
   transparent?: boolean
-  leading?: JSX.Element
-  trailing?: JSX.Element
+  leading?: ReactNode
+  trailing?: ReactNode
   readonly?: boolean
   error?: string | boolean
   noOptionMessage?: string
@@ -186,19 +188,19 @@ const Selectable: React.ForwardRefExoticComponent<SelectableProps> = forwardRef<
       <div
         ref={inputWrapperRef}
         className={cn(
-          'relative mt-0 flex w-full items-center justify-around gap-1 rounded-md border border-bc-primary-50 dark:border-bc-neutral-500/20 dark:focus-within:border-bc-neutral-500/40',
+          'border-bc-primary-50 dark:border-bc-neutral-500/20 dark:focus-within:border-bc-neutral-500/40 relative mt-0 flex w-full items-center justify-around gap-1 rounded-md border',
           {
-            'bg-bc-neutral-400 px-2 dark:bg-bc-surface-900': !transparent,
+            'bg-bc-neutral-400 dark:bg-bc-surface-900 px-2': !transparent,
             'border-bc-error focus-within:border-bc-error dark:border-bc-error dark:focus-within:border-bc-error':
               Boolean(error),
-            'cursor-not-allowed border-bc-inverse-50 bg-bc-neutral-800 opacity-40 dark:bg-bc-surface-500':
+            'border-bc-inverse-50 bg-bc-neutral-800 dark:bg-bc-surface-500 cursor-not-allowed opacity-40':
               disabled
           },
           className
         )}
       >
         {Boolean(leading) && (
-          <div className="flex items-center justify-center text-bc-primary-50 brightness-150">
+          <div className="text-bc-primary-50 flex items-center justify-center brightness-150">
             {leading}
           </div>
         )}
@@ -216,7 +218,7 @@ const Selectable: React.ForwardRefExoticComponent<SelectableProps> = forwardRef<
           )}
           <input
             className={cn(
-              'w-full border-0 border-none bg-transparent focus:outline-none dark:text-bc-neutral-500 dark:enabled:placeholder-bc-neutral-950/50',
+              'dark:text-bc-neutral-500 dark:enabled:placeholder-bc-neutral-950/50 w-full border-0 border-none bg-transparent focus:outline-none',
               'mt-0 py-2',
               'font-thin',
               {
@@ -237,7 +239,7 @@ const Selectable: React.ForwardRefExoticComponent<SelectableProps> = forwardRef<
         </label>
 
         {Boolean(trailing) && (
-          <div className="flex items-center justify-center text-bc-primary-50">
+          <div className="text-bc-primary-50 flex items-center justify-center">
             {trailing}
           </div>
         )}

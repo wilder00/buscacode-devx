@@ -1,4 +1,5 @@
 import { cn } from '@buscacode/tailwind-utils'
+import type { ReactNode } from 'react'
 import type { OptionValue, SelectableOption } from './Selectable.types'
 
 interface DropdownProps {
@@ -19,12 +20,12 @@ export default function Dropdown({
   multiple = false,
   onClickOption,
   value = null
-}: Readonly<DropdownProps>): JSX.Element {
+}: Readonly<DropdownProps>): ReactNode {
   const hasOptions = options.length > 0
   return (
     <div
       className={cn(
-        'absolute left-0 right-0 top-[calc(100%_+_2px)] z-10 overflow-hidden rounded-lg dark:bg-bc-surface-900',
+        'dark:bg-bc-surface-900 absolute top-[calc(100%_+_2px)] right-0 left-0 z-10 overflow-hidden rounded-lg',
         'max-h-0',
         {
           'max-h-[300px]': isOpen
@@ -37,7 +38,7 @@ export default function Dropdown({
         <div
           className={cn(
             'flex max-h-[300px] flex-col gap-1 overflow-y-scroll overscroll-contain rounded-md p-2',
-            '[&::-webkit-scrollbar-thumb]:bg-bc-inverse-50 hover:[&::-webkit-scrollbar-thumb]:bg-neutral-600 [&::-webkit-scrollbar-track]:bg-bc-inverse-200 [&::-webkit-scrollbar]:w-1'
+            '[&::-webkit-scrollbar-thumb]:bg-bc-inverse-50 [&::-webkit-scrollbar-track]:bg-bc-inverse-200 [&::-webkit-scrollbar]:w-1 hover:[&::-webkit-scrollbar-thumb]:bg-neutral-600'
           )}
         >
           {options.map((option) => {
@@ -45,7 +46,7 @@ export default function Dropdown({
               <button
                 key={`${option.value}`}
                 className={cn(
-                  'w-full cursor-pointer rounded-sm px-4 py-1 text-left dark:bg-bc-inverse-500 hover:dark:bg-bc-inverse-300',
+                  'dark:bg-bc-inverse-500 hover:dark:bg-bc-inverse-300 w-full cursor-pointer rounded-sm px-4 py-1 text-left',
                   {
                     'dark:bg-bc-primary-500 hover:dark:bg-bc-primary-400':
                       Array.isArray(value) && multiple

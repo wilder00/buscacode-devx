@@ -1,12 +1,16 @@
 {
   "editor.codeActionsOnSave": {
-    "source.organizeImports": "explicit"
+    "source.organizeImports": "explicit",
+    "source.fixAll.eslint": "explicit", //fix all eslint look like this is the most important
+    "source.fixAll.ts": "explicit",
+    "source.sortImports": "explicit"
   },
   "prettier.enable": true,
   /*using lf for end of line instead of crlf*/
-  "files.eol": "\n",
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.defaultFormatter": "prettier.prettier-vscode",
   "editor.formatOnSave": true,
+  "eslint.enable": true,
+  "eslint.format.enable": true,
   "eslint.validate": [
     "javascript",
     "typescript",
@@ -15,11 +19,12 @@
     "typescriptreact",
     "sql"
   ],
+  "eslint.workingDirectories": ["."],
   "files.associations": {
     "*.css": "tailwindcss"
   },
   "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "prettier.prettier-vscode"
   },
   /* "[mdx]": {
     //"editor.formatOnSave": false,
@@ -33,26 +38,26 @@
     //"editor.formatOnSave": false,
     //default editor.defaultFormatter which is not prettier, i dont want to use prettier
     //"editor.defaultFormatter": "unifiedjs.vscode-mdx",
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "prettier.prettier-vscode",
     "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
       "source.organizeImports": "never"
     }
   },
   "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "prettier.prettier-vscode"
   },
   "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "prettier.prettier-vscode"
   },
   "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "prettier.prettier-vscode"
   },
   "[astro]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "prettier.prettier-vscode"
   },
   "[javascriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "prettier.prettier-vscode"
   },
 
   "[sql]": {

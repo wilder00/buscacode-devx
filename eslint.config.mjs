@@ -67,6 +67,12 @@ export default [
     }
   },
   {
-    ignores: ['**/node_modules', '**/dist', '.docusaurus', '.astro']
+    ignores: [
+      '**/node_modules',
+      '**/dist',
+      '.docusaurus',
+      '.astro',
+      '.react-router'
+    ]
   }
 ]

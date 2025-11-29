@@ -1,13 +1,26 @@
-import { variables } from '@buscacode/tailwind-plugins'
+// Asumiendo que 'basePluginConfig' es el nuevo nombre para la función que
+// devuelve la configuración (lo que antes era 'variables').
 import type { Config } from 'tailwindcss'
-import resolveConfig from 'tailwindcss/resolveConfig'
+// ¡Nota! Ya NO se necesita 'tailwindcss/resolveConfig'
 
+/**
+ * Define la configuración por defecto.
+ * Ahora usamos 'basePluginConfig()' directamente en 'plugins'.
+ */
 export const defaultConfig: Partial<Config> = {
   content: [],
   theme: {
     extend: {}
-  },
-  plugins: [variables()]
+  }
+  // Reemplaza 'variables()' con 'basePluginConfig()' o el nombre
+  // que le hayas dado a la función en tu paquete.
 }
 
-export const computedDefaultConfig = resolveConfig(defaultConfig as Config)
+/**
+ * En v4, generalmente se EVITA la resolución síncrona (resolveConfig).
+ * Si realmente necesitas acceder a la configuración resuelta (por ejemplo, para
+ * usar los valores del tema en otro código JavaScript), la recomendación es
+ * utilizar un enfoque que no dependa de 'resolveConfig'.
+ * * Si solo la usabas para exportar la configuración, simplemente exporta 'defaultConfig'.
+ */
+export const computedDefaultConfig = defaultConfig

@@ -1,4 +1,5 @@
 import { cn } from '@buscacode/tailwind-utils'
+import type { ReactNode } from 'react'
 
 interface ArrowProps {
   className?: string
@@ -8,11 +9,11 @@ interface ArrowProps {
 export default function Arrow({
   className,
   inverse = false
-}: Readonly<ArrowProps>): JSX.Element {
+}: Readonly<ArrowProps>): ReactNode {
   return (
     <div
       className={cn(
-        'h-0 w-0 rotate-0 border-x-[7px] border-b-[7px] border-x-transparent border-b-bc-primary-500 transition-transform dark:border-b-bc-neutral-950',
+        'border-b-bc-primary-500 dark:border-b-bc-neutral-950 h-0 w-0 rotate-0 border-x-[7px] border-b-[7px] border-x-transparent transition-transform',
         '',
         {
           '-rotate-180': inverse

@@ -36,8 +36,7 @@
     "packages": "packages"
   },
   "dependencies": {
-    "@buscacode/tailwind-plugins": "workspace:*",
-    "tailwindcss": "3.4.15"
+    "tailwindcss": "4.1.17"
   },
   "peerDependencies": {
     "tailwindcss": ">=3.4.15"

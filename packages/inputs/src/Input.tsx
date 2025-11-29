@@ -1,13 +1,13 @@
 import { cn } from '@buscacode/tailwind-utils'
-import { forwardRef } from 'react'
+import { forwardRef, type ReactNode } from 'react'
 import type { Size } from './Input.types'
 export interface InputProps extends React.RefAttributes<HTMLInputElement> {
   disabled?: boolean
   loading?: boolean
   className?: string
   size?: Size
-  leading?: JSX.Element
-  trailing?: JSX.Element
+  leading?: ReactNode
+  trailing?: ReactNode
   label?: string
   transparent?: boolean
   readonly?: boolean
@@ -45,19 +45,19 @@ const Input: React.ForwardRefExoticComponent<
         )}
         <div
           className={cn(
-            'mt-0 flex w-full items-center justify-around gap-1 rounded-md border border-bc-primary-50 dark:border-bc-neutral-500/20 dark:focus-within:border-bc-neutral-500/40',
+            'border-bc-primary-50 dark:border-bc-neutral-500/20 dark:focus-within:border-bc-neutral-500/40 mt-0 flex w-full items-center justify-around gap-1 rounded-md border',
             {
-              'bg-bc-neutral-400 px-2 dark:bg-bc-surface-900': !transparent,
+              'bg-bc-neutral-400 dark:bg-bc-surface-900 px-2': !transparent,
               'border-bc-error focus-within:border-bc-error dark:border-bc-error dark:focus-within:border-bc-error':
                 Boolean(error),
-              'cursor-not-allowed border-bc-inverse-50 bg-bc-neutral-800 opacity-40 dark:bg-bc-surface-500':
+              'border-bc-inverse-50 bg-bc-neutral-800 dark:bg-bc-surface-500 cursor-not-allowed opacity-40':
                 disabled
             },
             className
           )}
         >
           {Boolean(leading) && (
-            <div className="flex items-center justify-center text-bc-primary-50 brightness-150">
+            <div className="text-bc-primary-50 flex items-center justify-center brightness-150">
               {leading}
             </div>
           )}
@@ -68,7 +68,7 @@ const Input: React.ForwardRefExoticComponent<
           >
             <input
               className={cn(
-                'w-full border-0 border-none bg-transparent focus:outline-none dark:text-bc-neutral-500 dark:enabled:placeholder-bc-neutral-950/50',
+                'dark:text-bc-neutral-500 dark:enabled:placeholder-bc-neutral-950/50 w-full border-0 border-none bg-transparent focus:outline-none',
                 'mt-0 py-2',
                 'font-thin',
                 {
@@ -83,13 +83,13 @@ const Input: React.ForwardRefExoticComponent<
             />
           </span>
           {Boolean(trailing) && (
-            <div className="flex items-center justify-center text-bc-primary-50">
+            <div className="text-bc-primary-50 flex items-center justify-center">
               {trailing}
             </div>
           )}
         </div>
         {Boolean(error) && typeof error === 'string' && (
-          <span className="text-xs font-thin text-bc-error">{error}</span>
+          <span className="text-bc-error text-xs font-thin">{error}</span>
         )}
       </div>
     )

@@ -9,11 +9,7 @@ export default {
   quoteProps: 'as-needed',
   endOfLine: 'lf',
   trailingComma: 'none',
-  plugins: [
-    '@svgr/plugin-prettier',
-    'prettier-plugin-astro',
-    'prettier-plugin-tailwindcss'
-  ],
+  plugins: ['@svgr/plugin-prettier', 'prettier-plugin-tailwindcss'],
   overrides: [
     {
       files: ['.svg'],
@@ -26,14 +22,9 @@ export default {
       options: {
         useTabs: false
       }
-    },
-    {
-      files: ['**/*.astro'],
-      options: {
-        parser: 'astro'
-      }
     }
   ],
   tailwindFunctions: ['cn', 'twCn'],
-  tailwindConfig: './tailwind.config.js'
+  //tailwindConfig: './tailwind.config.js'
+  tailwindStylesheet: './app/app.css'
 }

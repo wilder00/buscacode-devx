@@ -22,10 +22,10 @@ export default function Chip({
   return (
     <Component
       className={cn(
-        'bg-neutral-200 dark:bg-bc-inverse-50 dark:text-neutral-50',
+        'dark:bg-bc-inverse-50 bg-neutral-200 dark:text-neutral-50',
         'inline-flex items-center justify-between gap-1.5 rounded-3xl px-3 py-0 align-middle transition-[background-color] duration-300',
         {
-          'cursor-pointer hover:bg-neutral-300 dark:hover:bg-bc-inverse-100':
+          'dark:hover:bg-bc-inverse-100 cursor-pointer hover:bg-neutral-300':
             Boolean(onClick),
           'pr-2': dismissible
         },

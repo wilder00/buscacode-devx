@@ -25,7 +25,7 @@ export default function ButtonLink({
         'relative flex items-center justify-center gap-1',
         'px-3 py-1 text-xs font-thin',
         {
-          'disabled:cursor-not-allowed disabled:opacity-40 disabled:dark:bg-bc-surface-500':
+          'disabled:dark:bg-bc-surface-500 disabled:cursor-not-allowed disabled:opacity-40':
             disabled
         },
         className
