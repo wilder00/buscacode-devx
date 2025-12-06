@@ -72,7 +72,8 @@ export default [
       '**/dist',
       '.docusaurus',
       '.astro',
-      '.react-router'
+      '.react-router',
+      'build'
     ]
   }
 ]

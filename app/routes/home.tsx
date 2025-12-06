@@ -1,4 +1,3 @@
-import { Welcome } from '../welcome/welcome'
 import type { Route } from './+types/home'
 
 // eslint-disable-next-line no-empty-pattern
@@ -10,5 +9,5 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Home() {
-  return <Welcome />
+  return <div>Home</div>
 }

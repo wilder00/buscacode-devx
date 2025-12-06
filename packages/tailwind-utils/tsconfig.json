@@ -9,6 +9,8 @@
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
+    // "module": "es2022",
+    // "moduleResolution": "bundler",
     "module": "ESNext",
     "moduleResolution": "Node",
     "resolveJsonModule": true,
