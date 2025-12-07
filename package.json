@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "react-router build",
+    "build:analyze": "react-router build --mode analyze",
     "dev": "react-router dev",
     "start": "react-router-serve ./build/server/index.js",
     "typecheck": "react-router typegen && tsc",
@@ -26,6 +27,7 @@
   },
   "dependencies": {
     "@buscacode/buttons": "workspace:*",
+    "@buscacode/base-styles": "workspace:*",
     "@buscacode/chips": "workspace:*",
     "@buscacode/devx-utils": "workspace:*",
     "@buscacode/icons": "workspace:*",
@@ -68,6 +70,7 @@
     "prettier": "3.7.2",
     "prettier-plugin-tailwindcss": "0.7.1",
     "rimraf": "6.1.2",
+    "rollup-plugin-visualizer": "6.0.5",
     "tailwindcss": "4.1.17",
     "tsup": "8.5.1",
     "typescript": "5.9.3",

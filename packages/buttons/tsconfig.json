@@ -3,9 +3,9 @@
     "target": "ESNext",
     "useDefineForClassFields": true,
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    "allowJs": false,
+    "allowJs": true,
     "skipLibCheck": true,
-    "esModuleInterop": false,
+    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
@@ -16,9 +16,13 @@
     "noEmit": true,
     "types": ["@testing-library/jest-dom"],
     "jsx": "react-jsx",
-    "baseUrl": ".",
-    "verbatimModuleSyntax": true
+    //"outDir": "./dist",
+    //"declaration": true,
+    "baseUrl": "."
+    // "rootDir": "./src",
+    // "baseUrl": "."
+    //"verbatimModuleSyntax": true
   },
-  "include": ["src"],
+  "include": ["src", "src/**/*"],
   "exclude": ["node_modules"]
 }

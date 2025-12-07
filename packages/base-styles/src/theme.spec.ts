@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'vitest'
 
-describe('Tailwind plugins', () => {
+describe('base-styles theme', () => {
   test('should import', () => {
     expect(true).toBeTruthy()
   })

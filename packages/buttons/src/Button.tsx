@@ -1,9 +1,12 @@
+import '@buscacode/base-styles/dist/index.css'
+
 import { cn } from '@buscacode/tailwind-utils'
 import clsx from 'clsx'
 import type { ButtonHTMLAttributes } from 'react'
 import type { Size } from './Buttons.types'
 import SpinnerLoader from './SpinnerLoader'
 import { buttonClass } from './styles.css'
+
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   disabled?: boolean
   loading?: boolean
@@ -28,8 +31,8 @@ export default function Button({
   }
   return (
     <button
-      className={clsx(buttonClass, className)}
       {...restProps}
+      className={clsx(buttonClass, className)}
       onClick={handleClick}
       disabled={disabled || loading}
     >

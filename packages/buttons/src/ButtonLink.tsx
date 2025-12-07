@@ -1,5 +1,5 @@
 import { cn } from '@buscacode/tailwind-utils'
-import React from 'react'
+import type React from 'react'
 import type { Size } from './Buttons.types'
 export interface ButtonLinkProps {
   disabled?: boolean

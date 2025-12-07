@@ -28,7 +28,7 @@
     "verbatimModuleSyntax": true
   },
   "types": ["vitest/globals", "react", "react-dom"],
-  "exclude": ["dist", "build"],
+  "exclude": ["dist", "build", "packages"],
   "include": [
     "./**/*.ts",
     "./**/*.tsx",

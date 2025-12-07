@@ -1,8 +1,8 @@
 import { createTheme } from '@vanilla-extract/css'
 import { vars } from './contract.css'
+import type { ThemeBase } from './types'
 
-// --- TEMA CLARO (Light Theme) ---
-export const christmasLightTheme = createTheme(vars, {
+export const christmasLightValues: ThemeBase = {
   color: {
     // Marca: Rojo y Verde vibrantes de Navidad
     brandPrimary: '#E31B23', // Rojo Navidad vivo
@@ -30,10 +30,9 @@ export const christmasLightTheme = createTheme(vars, {
     statusWarning: '#FD971F', // Naranja Monokai para advertencias
     statusInfo: '#66D9EF' // Cian Monokai para información
   }
-})
+}
 
-// --- TEMA OSCURO (Dark Theme - Estilo Monokai puro) ---
-export const christmasDarkTheme = createTheme(vars, {
+export const christmasDarkValues: ThemeBase = {
   color: {
     // Marca: Ajusta los colores para que resalten sobre fondo oscuro
     brandPrimary: '#FF4136', // Rojo vivo
@@ -61,10 +60,9 @@ export const christmasDarkTheme = createTheme(vars, {
     statusWarning: '#FD971F', // Naranja Monokai para advertencias
     statusInfo: '#66D9EF' // Cian Monokai para información
   }
-})
+}
 
-// --- TEMA CLARO (GitHub Light Theme) ---
-export const githubLightTheme = createTheme(vars, {
+export const githubLightValues: ThemeBase = {
   color: {
     // Marca: El icónico azul de GitHub
     brandPrimary: '#0969da', // GitHub Blue (botones, enlaces)
@@ -92,10 +90,9 @@ export const githubLightTheme = createTheme(vars, {
     statusWarning: '#9a6700', // Naranja para advertencias
     statusInfo: '#0969da' // Azul para información
   }
-})
+}
 
-// --- TEMA OSCURO (GitHub Dark Theme) ---
-export const githubDarkTheme = createTheme(vars, {
+export const githubDarkValues: ThemeBase = {
   color: {
     // Marca: El azul se aclara un poco para contraste en oscuro
     brandPrimary: '#58a6ff', // Azul de GitHub en dark mode
@@ -123,4 +120,16 @@ export const githubDarkTheme = createTheme(vars, {
     statusWarning: '#d29922', // Naranja advertencia
     statusInfo: '#58a6ff' // Azul información
   }
-})
+}
+
+// --- TEMA CLARO (Light Theme) ---
+export const christmasLightTheme = createTheme(vars, christmasLightValues)
+
+// --- TEMA OSCURO (Dark Theme - Estilo Monokai puro) ---
+export const christmasDarkTheme = createTheme(vars, christmasDarkValues)
+
+// --- TEMA CLARO (GitHub Light Theme) ---
+export const githubLightTheme = createTheme(vars, githubLightValues)
+
+// --- TEMA OSCURO (GitHub Dark Theme) ---
+export const githubDarkTheme = createTheme(vars, githubDarkValues)

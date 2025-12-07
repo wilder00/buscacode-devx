@@ -1,11 +1,23 @@
 import { reactRouter } from '@react-router/dev/vite'
 import tailwindcss from '@tailwindcss/vite'
+import { visualizer } from 'rollup-plugin-visualizer'
 import { defineConfig } from 'vite'
 import tsconfigPaths from 'vite-tsconfig-paths'
 import { configDefaults } from 'vitest/config'
 
-export default defineConfig({
-  plugins: [tailwindcss(), reactRouter(), tsconfigPaths()],
+export default defineConfig(({ mode }) => ({
+  plugins: [
+    tailwindcss(),
+    reactRouter(),
+    tsconfigPaths(),
+    mode === 'analyze' &&
+      visualizer({
+        filename: 'analyze/bundle-stats.html',
+        open: true,
+        gzipSize: true,
+        brotliSize: true
+      })
+  ].filter(Boolean),
   test: {
     environment: 'node',
     globals: false,
@@ -24,4 +36,4 @@ export default defineConfig({
     },
     projects: ['packages/*'] // in before versions it was workspace in a separated file
   }
-})
+}))

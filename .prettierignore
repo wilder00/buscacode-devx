@@ -10,3 +10,4 @@ pnpm-lock.yaml
 .astro
 .react-router
 build
+analyze

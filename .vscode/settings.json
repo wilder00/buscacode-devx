@@ -20,8 +20,10 @@
     "sql"
   ],
   "eslint.workingDirectories": ["."],
+  "editor.snippetSuggestions": "top",
   "files.associations": {
     "*.css": "tailwindcss"
+    //"*.css.ts": "vanilla-extract"
   },
   "[jsonc]": {
     "editor.defaultFormatter": "prettier.prettier-vscode"

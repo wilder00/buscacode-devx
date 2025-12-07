@@ -4,7 +4,10 @@ import dts from 'vite-plugin-dts'
 import { defineConfig } from 'vitest/config'
 
 export default defineConfig({
-  plugins: [vanillaExtractPlugin(), dts({ rollupTypes: true })],
+  plugins: [
+    vanillaExtractPlugin(),
+    dts({ rollupTypes: true, entryRoot: 'src', outDir: 'dist' })
+  ],
   build: {
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),

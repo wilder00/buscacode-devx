@@ -7,10 +7,15 @@ import { defineConfig } from 'vitest/config'
 export default defineConfig({
   plugins: [
     react(),
-    vanillaExtractPlugin(/* {
+    vanillaExtractPlugin(),
+
+    /* {
       //identifiers: ({ hash }) => `bc_${hash}`
-    } */),
-    dts({ rollupTypes: true })
+    } */
+    dts({
+      // If you are using rollupTypes: true (which seems to be the source of your error text input):
+      rollupTypes: true
+    })
     // viteStaticCopy({
     //   targets: [
     //     {
@@ -21,18 +26,22 @@ export default defineConfig({
     // })
   ],
   build: {
+    minify: true, // ⬅️ DESACTIVA MINIFICACIÓN
+    sourcemap: false, // ⬅️ Genera sourcemaps legibles
+    cssMinify: true,
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
       formats: ['es', 'cjs'],
       fileName: 'index'
+      //fileName: (format) => `index.${format}.js`
     },
     rollupOptions: {
       external: ['react', 'react-dom', 'react/jsx-runtime'],
       output: {
         globals: {
           react: 'React',
-          'react-dom': 'ReactDOM',
-          'react/jsx-runtime': 'react/jsx-runtime'
+          'react-dom': 'ReactDOM'
+          //'react/jsx-runtime': 'react/jsx-runtime'
         }
       }
     }

@@ -73,7 +73,8 @@ export default [
       '.docusaurus',
       '.astro',
       '.react-router',
-      'build'
+      'build',
+      'analyze'
     ]
   }
 ]
