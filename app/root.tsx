@@ -7,7 +7,7 @@ import {
   ScrollRestoration
 } from 'react-router'
 
-import { christmasLightTheme } from 'packages/base-styles/dist'
+import { christmasLightTheme } from '@buscacode/base-styles'
 import type { Route } from './+types/root'
 import './app.css'
 

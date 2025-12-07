@@ -1,5 +1,4 @@
-import '@buscacode/base-styles/dist/index.css'
-
+import '@buscacode/base-styles/index.css'
 import { cn } from '@buscacode/tailwind-utils'
 import clsx from 'clsx'
 import type { ButtonHTMLAttributes } from 'react'

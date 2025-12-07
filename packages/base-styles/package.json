@@ -8,9 +8,19 @@
   ],
   "author": "Wilder Trujillo <nadie437@gmail.com>",
   "homepage": "https://github.com/wilder00/buscacode-devx",
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "default": "./dist/index.js"
+    },
+    "./index.css": "./dist/index.css"
+  },
   "files": [
     "dist"
   ],
