@@ -1,5 +1,5 @@
 import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin'
-import react from '@vitejs/plugin-react'
+import { default as react } from '@vitejs/plugin-react'
 import { resolve } from 'node:path'
 import dts from 'vite-plugin-dts'
 import { defineConfig } from 'vitest/config'
@@ -49,6 +49,6 @@ export default defineConfig({
   test: {
     globals: true,
     environment: 'jsdom',
-    setupFiles: ['@testing-library/jest-dom/vitest']
+    setupFiles: ['@testing-library/jest-dom']
   }
 })

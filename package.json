@@ -26,8 +26,8 @@
     "publish:packages": "lerna run build && pnpm run test && lerna publish"
   },
   "dependencies": {
-    "@buscacode/buttons": "workspace:*",
     "@buscacode/base-styles": "workspace:*",
+    "@buscacode/buttons": "workspace:*",
     "@buscacode/chips": "workspace:*",
     "@buscacode/devx-utils": "workspace:*",
     "@buscacode/icons": "workspace:*",
@@ -40,6 +40,7 @@
     "isbot": "5.1.32",
     "react": "19.2.0",
     "react-dom": "19.2.0",
+    "react-live": "4.1.8",
     "react-router": "7.9.6"
   },
   "devDependencies": {

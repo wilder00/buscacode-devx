@@ -8,15 +8,15 @@
   ],
   "author": "Wilder Trujillo <nadie437@gmail.com>",
   "homepage": "https://github.com/wilder00/buscacode-devx",
-  "type": "module",
   "main": "./dist/index.js",
-  "module": "./dist/index.js",
+  "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "rimraf dist && tsc -b && vite build"
+    "build2": "rimraf dist && tsc -b && vite build",
+    "build": "rimraf dist && vite build"
   },
   "license": "MIT",
   "repository": {
