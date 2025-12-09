@@ -1,0 +1,52 @@
+{
+  "name": "@buscacode/utils",
+  "version": "0.0.0",
+  "description": "Simple package to be used as utils base with vanilla-extract for buscacode projects",
+  "keywords": [
+    "buscacode",
+    "utils"
+  ],
+  "author": "Wilder Trujillo <nadie437@gmail.com>",
+  "homepage": "https://github.com/wilder00/buscacode-devx",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build2": "rimraf dist && tsc -b && vite build",
+    "build": "rimraf dist && vite build"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wilder00/buscacode-devx.git",
+    "directory": "packages/utils"
+  },
+  "bugs": {
+    "url": "https://github.com/wilder00/buscacode-devx/issues"
+  },
+  "directories": {
+    "doc": "docs",
+    "packages": "packages"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "vite": "7.2.6",
+    "vite-plugin-dts": "4.5.4"
+  },
+  "peerDependencies": {},
+  "engines": {
+    "node": ">=18.0"
+  }
+}
