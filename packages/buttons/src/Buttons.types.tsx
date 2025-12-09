@@ -1,4 +1,5 @@
 import type { ButtonHTMLAttributes, ReactNode } from 'react'
+import type { ButtonRecipeVariants } from './Button.css'
 
 export type Size = 'sm' | 'md' | 'lg'
 
@@ -16,18 +17,17 @@ export const ButtonShapes = {
   round: 'round',
   square: 'square'
 } as const
-export type ButtonShape = (typeof ButtonShapes)[keyof typeof ButtonShapes]
+export type ButtonShape = ButtonRecipeVariants['shape']
 
 export const ButtonVariantTypes = {
+  solid: 'solid',
   outlined: 'outlined',
   dashed: 'dashed',
-  solid: 'solid',
   filled: 'filled',
   text: 'text',
   link: 'link'
 } as const
-export type ButtonVariantType =
-  (typeof ButtonVariantTypes)[keyof typeof ButtonVariantTypes]
+export type ButtonVariantType = ButtonRecipeVariants['variant']
 
 export type ButtonHtmlType = ButtonHTMLAttributes<HTMLButtonElement>['type']
 
@@ -61,12 +61,14 @@ export interface BaseButtonProps {
   //color?: ButtonColorType
   variant?: ButtonVariantType
   icon?: ReactNode
+  color?: ButtonRecipeVariants['color']
   iconPosition?: 'start' | 'end'
   shape?: ButtonShape
   size?: ResponsiveSize
   disabled?: boolean
   loading?: boolean
   className?: string
+  block?: boolean
   danger?: boolean
   [key: `data-${string}`]: string
   [key: `aria-${string}`]: string | boolean | number | undefined

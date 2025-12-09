@@ -7,7 +7,6 @@ import {
   ScrollRestoration
 } from 'react-router'
 
-import { christmasLightTheme } from '@buscacode/base-styles'
 import type { Route } from './+types/root'
 import './app.css'
 
@@ -34,7 +33,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Meta />
         <Links />
       </head>
-      <body className={christmasLightTheme}>
+      <body className={'christmasLightTheme'}>
         {children}
         <ScrollRestoration />
         <Scripts />

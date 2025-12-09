@@ -1,35 +1,8 @@
-import clsx from 'clsx'
-import type { PropsWithChildren, ReactNode } from 'react'
-import type { ButtonProps } from './Button'
-import { buttonContentRecipeStyle } from './Button.css'
 import type {
   ResponsiveSize,
   ResponsiveSizeGroup,
   SizeType
 } from './Buttons.types'
-
-export function IconWrapper({ icon }: { icon: ReactNode }) {
-  return <span>{icon}</span>
-}
-
-export function ContentWrapper({
-  iconPosition,
-  icon,
-  children
-}: PropsWithChildren<{
-  iconPosition: ButtonProps['iconPosition']
-  icon: ReactNode
-}>) {
-  const contentWrapperClassName = clsx(
-    buttonContentRecipeStyle({ iconPosition })
-  )
-  return (
-    <span className={contentWrapperClassName}>
-      {icon && <IconWrapper icon={icon} />}
-      <span className="ml-2">{children}</span>
-    </span>
-  )
-}
 
 export const getSizeVariant = (
   field: ResponsiveSizeGroup,

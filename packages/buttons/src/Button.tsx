@@ -2,15 +2,14 @@ import '@buscacode/base-styles/index.css'
 import clsx from 'clsx'
 import type { PropsWithChildren, Ref } from 'react'
 import { forwardRef } from 'react'
-import { buttonRecipe } from './Button.css'
-import { ContentWrapper, getSizeVariant } from './Button.helper'
+import { buttonRecipe, contentInternal, iconStyle } from './Button.css'
+import { getSizeVariant } from './Button.helper'
 import type {
   BaseButtonProps,
   ButtonHtmlType,
   MergedHTMLAttributes
 } from './Buttons.types'
 import SpinnerLoader from './SpinnerLoader'
-import { buttonClass } from './styles.css'
 
 export interface ButtonProps extends BaseButtonProps, MergedHTMLAttributes {
   href?: string
@@ -28,52 +27,86 @@ export default forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(
       htmlType,
       icon,
       iconPosition,
+      variant = 'solid',
       size = 'medium',
+      shape = 'default',
+      block = false,
+      danger = false,
+      color = 'primary',
       href,
       ...restProps
     }: PropsWithChildren<ButtonProps>,
     ref
   ) {
-    if (href !== undefined) {
-      return (
-        <a
-          {...restProps}
-          className={clsx(buttonClass, className)}
-          href={disabled || loading ? undefined : href}
-          ref={ref as Ref<HTMLAnchorElement>}
-          tabIndex={disabled || loading ? -1 : 0}
-          aria-disabled={disabled || loading}
-        >
-          {icon}
-          {children}
-        </a>
-      )
-    }
-
-    const buttonClassName = clsx(
+    const buttonClass = clsx(
       buttonRecipe({
+        variant,
+        color,
         size: getSizeVariant('size', size),
         mobileSize: getSizeVariant('mobileSize', size),
         tabletSize: getSizeVariant('tabletSize', size),
         laptopSize: getSizeVariant('laptopSize', size),
-        desktopSize: getSizeVariant('desktopSize', size)
+        desktopSize: getSizeVariant('desktopSize', size),
+        shape,
+        block,
+        danger
       }),
       className
     )
+
+    const renderContent = () => {
+      if (loading) {
+        return (
+          <span className={contentInternal}>
+            <span className={iconStyle}>
+              <SpinnerLoader />
+            </span>
+            {children}
+          </span>
+        )
+      }
+
+      if (!icon) {
+        return children
+      }
+
+      return (
+        <span
+          className={contentInternal}
+          style={{
+            flexDirection: iconPosition === 'end' ? 'row-reverse' : 'row'
+          }}
+        >
+          <span className={iconStyle}>{icon}</span>
+          <span>{children}</span>
+        </span>
+      )
+    }
+
+    if (href !== undefined) {
+      return (
+        <a
+          {...restProps}
+          ref={ref as Ref<HTMLAnchorElement>}
+          className={buttonClass}
+          href={disabled || loading ? undefined : href}
+          aria-disabled={disabled || loading}
+        >
+          {renderContent()}
+        </a>
+      )
+    }
 
     return (
       <button
         {...restProps}
         ref={ref as Ref<HTMLButtonElement>}
-        className={buttonClassName}
+        className={buttonClass}
         disabled={disabled || loading}
         type={htmlType}
-        tabIndex={disabled || loading ? -1 : 0}
         aria-disabled={disabled || loading}
       >
-        <ContentWrapper iconPosition={iconPosition} icon={icon}>
-          {children}
-        </ContentWrapper>
+        {renderContent()}
         {loading && <SpinnerLoader />}
       </button>
     )

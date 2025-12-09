@@ -107,7 +107,27 @@ const githubDarkLiveTheme = {
 const ButtonView = () => (
   // El 'scope' es crucial: expone tus componentes al código que se escribe en el editor
   <LiveProvider
-    code={`<Button>Hola Mundo</Button>`}
+    code={`
+      <div className="flex flex-wrap max-w-[600px] gap-4 ">
+        <Button>Default</Button>
+        <Button variant="solid">Solid</Button>
+        <Button variant="outlined">Outlined</Button>
+
+        <Button variant="dashed">Dashed</Button>
+        <Button variant="filled">Filled</Button>
+        <Button variant="text">Text</Button>
+        <Button variant="link">Link</Button>
+        <div className="w-full" />
+        <Button color="secondary">Secondary default</Button>
+        <Button color="secondary" variant="solid">Secondary solid</Button>
+        <Button color="secondary" variant="outlined">Secondary outlined</Button>
+
+        <Button color="secondary" variant="dashed">Secondary dashed</Button>
+        <Button color="secondary" variant="filled">Secondary filled</Button>
+        <Button color="secondary" variant="text">Secondary text</Button>
+        <Button color="secondary" variant="link">Secondary link</Button>
+      </div>
+    `}
     scope={{ Button }}
     // Puedes necesitar un tema para que el editor se vea bien
     theme={githubDarkLiveTheme}
