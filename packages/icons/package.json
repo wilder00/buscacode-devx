@@ -9,20 +9,27 @@
   "author": "Wilder Trujillo <nadie437@gmail.com>",
   "homepage": "https://github.com/wilder00/buscacode-devx",
   "sideEffects": false,
-  "main": "src/index.ts",
-  "module": "src/index.ts",
-  "publishConfig": {
-    "main": "dist/index.js",
-    "module": "dist/index.js",
-    "types": "dist/index.d.ts"
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "default": "./dist/index.js"
+    }
   },
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "rimraf dist && svgr -- assets && pnpm run format:fix && pnpm run lint:fix && tsup src --dts",
+    "build:original": "rimraf dist && svgr -- src/assets && pnpm run format:fix && pnpm run lint:fix && tsup src --dts",
+    "build": "rimraf dist && svgr -- src/assets && generate:iconMaps && pnpm run format:fix && pnpm run lint:fix && vite build",
     "format:fix": "prettier --write ./src",
-    "lint:fix": "eslint ./src -c ../../eslint.config.mjs --fix"
+    "lint:fix": "eslint ./src -c ../../eslint.config.mjs --fix",
+    "generate:iconMaps": "tsx ./src/generate/generateIconMaps.ts &&"
   },
   "license": "MIT",
   "repository": {
@@ -41,10 +48,12 @@
     "node": ">=18.0"
   },
   "peerDependencies": {
-    "react": "^16 || ^17 || ^18",
-    "react-dom": "^16 || ^17 || ^18"
+    "react": "^18 || ^19",
+    "react-dom": "^18 || ^19"
   },
   "devDependencies": {
-    "@svgr/cli": "8.1.0"
+    "@svgr/cli": "8.1.0",
+    "@vitejs/plugin-react": "5.1.2",
+    "vite-plugin-dts": "4.5.4"
   }
 }

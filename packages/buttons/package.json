@@ -8,6 +8,7 @@
   ],
   "author": "Wilder Trujillo <nadie437@gmail.com>",
   "homepage": "https://github.com/wilder00/buscacode-devx",
+  "sideEffects": true,
   "type": "module",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",

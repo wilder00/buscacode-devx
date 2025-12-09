@@ -1,9 +1,9 @@
-/* eslint-disable no-undef */
-module.exports = {
+export default {
   icon: true,
   typescript: true,
   ref: false,
   titleProp: true,
-  outDir: 'src',
-  jsxRuntime: 'automatic'
+  outDir: 'src/components',
+  jsxRuntime: 'automatic',
+  module: 'es6'
 }
