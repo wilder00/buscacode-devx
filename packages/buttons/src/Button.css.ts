@@ -358,11 +358,11 @@ export type ButtonRecipeVariants = NonNullable<
 export const iconStyle = style({
   display: 'inline-flex',
   alignItems: 'center',
-  lineHeight: 0
+  justifyContent: 'center'
 })
 
 export const contentInternal = style({
   display: 'inline-flex',
   alignItems: 'center',
-  gap: '8px'
+  gap: '10px'
 })

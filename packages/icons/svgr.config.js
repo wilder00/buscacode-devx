@@ -2,8 +2,7 @@ export default {
   icon: true,
   typescript: true,
   ref: false,
-  titleProp: true,
+  titleProp: false,
   outDir: 'src/components',
-  jsxRuntime: 'automatic',
-  module: 'es6'
+  jsxRuntime: 'automatic'
 }

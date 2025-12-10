@@ -7,6 +7,10 @@ import {
   ScrollRestoration
 } from 'react-router'
 
+import {
+  christmasDarkTheme,
+  christmasDarkValues
+} from 'packages/base-styles/dist'
 import type { Route } from './+types/root'
 import './app.css'
 
@@ -33,7 +37,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Meta />
         <Links />
       </head>
-      <body className={'christmasLightTheme'}>
+      <body
+        className={christmasDarkTheme}
+        style={{
+          backgroundColor: christmasDarkValues.color.interfaceBackground
+        }}
+      >
         {children}
         <ScrollRestoration />
         <Scripts />

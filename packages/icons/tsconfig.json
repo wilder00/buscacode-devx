@@ -17,6 +17,6 @@
     "jsx": "react-jsx",
     "baseUrl": "."
   },
-  "include": ["src"],
-  "exclude": ["node_modules"]
+  "include": ["src/index.ts", "src/iconMaps.ts"],
+  "exclude": ["node_modules", "src/assets", "src/generate"]
 }

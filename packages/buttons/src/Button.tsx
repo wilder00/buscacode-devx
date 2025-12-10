@@ -78,7 +78,7 @@ export default forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(
           }}
         >
           <span className={iconStyle}>{icon}</span>
-          <span>{children}</span>
+          <span style={{ color: 'white' }}>{children}</span>
         </span>
       )
     }
@@ -107,7 +107,6 @@ export default forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(
         aria-disabled={disabled || loading}
       >
         {renderContent()}
-        {loading && <SpinnerLoader />}
       </button>
     )
   }

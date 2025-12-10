@@ -7,17 +7,23 @@ export default defineConfig({
   plugins: [
     react(),
     dts({
-      rollupTypes: true
+      insertTypesEntry: true,
+      copyDtsFiles: true,
+      include: ['src/index.ts', 'src/iconMaps.ts', 'src/components']
     })
   ],
   build: {
-    minify: true, // ⬅️ DESACTIVA MINIFICACIÓN
-    sourcemap: false, // ⬅️ Genera sourcemaps legibles
+    minify: true,
+    sourcemap: false,
     cssMinify: true,
     lib: {
-      entry: resolve(__dirname, 'src/index.ts'),
+      entry: {
+        index: resolve(__dirname, 'src/index.ts'),
+        iconMaps: resolve(__dirname, 'src/iconMaps.ts')
+      },
       formats: ['es', 'cjs'],
-      fileName: 'index'
+      fileName: (format, entryName) => `${entryName}.${format}.js`
+      //fileName: 'index'
     },
     rollupOptions: {
       external: ['react', 'react-dom', 'react/jsx-runtime'],

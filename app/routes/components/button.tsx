@@ -1,5 +1,5 @@
 /* eslint-disable no-empty-pattern */
-import ButtonView from '@/presentation/components/buttons/ButtonView'
+import ButtonView from '@/presentation/components/ButtonsView/ButtonView'
 import '@buscacode/buttons/index.css'
 import type { Route } from '../components/+types/button'
 

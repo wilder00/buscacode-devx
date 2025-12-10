@@ -1,29 +1,31 @@
 import fs from 'fs'
 import path from 'path'
+import { fileURLToPath } from 'url'
 
-const iconsDir = path.resolve(__dirname, 'src/components')
-const indexPath = path.resolve(__dirname, 'src/iconMaps.ts')
+// Fix dirname for ESM
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
 
-// lee todos los archivos TSX generados por SVGR
+// Correct folder paths
+const iconsDir = path.resolve(__dirname, '../components')
+const indexPath = path.resolve(__dirname, '../iconMaps.ts')
+
+// Get all TSX component icons
 const files = fs.readdirSync(iconsDir).filter((f) => f.endsWith('.tsx'))
 
 const entries = files.map((file) => {
   const name = file.replace('.tsx', '')
-  return `  "${name}": () => import("./${name}"),`
+  //return `  "${name}": () => import('./components/${name}.tsx'),`
+  return `  ['${name}']: () => import('./components/${name}'),`
 })
 
-const content = `
-export const iconsMap = {
+const content = `export const iconsMap = {
 ${entries.join('\n')}
 } as const
 `
 
-let indexContent = fs.readFileSync(indexPath, 'utf8')
-indexContent = indexContent
-  .replace(/export\s+const\s+iconsMap[\s\S]*?as\s+const;?/g, '')
-  .trimEnd()
-
-const finalContent = indexContent + content
+// Append new map
+const finalContent = content
 
 fs.writeFileSync(indexPath, finalContent)
 

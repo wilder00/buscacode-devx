@@ -10,26 +10,32 @@
   "homepage": "https://github.com/wilder00/buscacode-devx",
   "sideEffects": false,
   "type": "module",
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.js",
+  "main": "./dist/index.cjs.js",
+  "module": "./dist/index.es.js",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs",
-      "default": "./dist/index.js"
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.cjs.js",
+      "default": "./dist/index.es.js"
+    },
+    "./iconMaps": {
+      "types": "./dist/iconMaps.d.ts",
+      "import": "./dist/iconMaps.es.js",
+      "require": "./dist/iconMaps.cjs.js",
+      "default": "./dist/iconMaps.es.js"
     }
   },
   "files": [
     "dist"
   ],
   "scripts": {
-    "build:original": "rimraf dist && svgr -- src/assets && pnpm run format:fix && pnpm run lint:fix && tsup src --dts",
-    "build": "rimraf dist && svgr -- src/assets && generate:iconMaps && pnpm run format:fix && pnpm run lint:fix && vite build",
+    "build:original": "rimraf dist && svgr -- src/assets && pnpm run generate:iconMaps && pnpm run format:fix && pnpm run lint:fix && tsup src --dts",
+    "build": "rimraf dist && svgr -- src/assets && pnpm run generate:iconMaps && pnpm run format:fix && pnpm run lint:fix && vite build",
     "format:fix": "prettier --write ./src",
     "lint:fix": "eslint ./src -c ../../eslint.config.mjs --fix",
-    "generate:iconMaps": "tsx ./src/generate/generateIconMaps.ts &&"
+    "generate:iconMaps": "tsx ./src/generate/generateIconMaps.ts"
   },
   "license": "MIT",
   "repository": {
@@ -54,6 +60,7 @@
   "devDependencies": {
     "@svgr/cli": "8.1.0",
     "@vitejs/plugin-react": "5.1.2",
+    "tsx": "4.21.0",
     "vite-plugin-dts": "4.5.4"
   }
 }
